@@ -32,3 +32,12 @@ html {
 body {
   overflow-x: hidden;
 }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+  z-index: 50;
+}

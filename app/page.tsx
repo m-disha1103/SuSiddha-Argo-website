@@ -10,26 +10,57 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import PageLoader from "./components/PageLoader";
+import ScrollFade from "./components/ScrollFade";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 export default function Home() {
   return (
-    <main className="relative bg-gradient-to-b from-[#FFFDF7] via-[#F8F4E8] to-[#F3E6C4]">
+    <main className="relative overflow-x-hidden bg-gradient-to-b from-[#FFFDF7] via-[#F8F4E8] to-[#F3E6C4]">
+
       <Navbar />
+
+      {/* Hero should appear immediately */}
       <Hero />
-      <BrandPromise />
-      <FarmToFamily />
-      <ProductSection />
-      <ProductSpecs />
-      <Benefits />
-      <CinematicBanner />
-      <About />
-      <Contact />
+
+      <ScrollFade>
+        <BrandPromise />
+      </ScrollFade>
+
+      <ScrollFade>
+        <FarmToFamily />
+      </ScrollFade>
+
+      <ScrollFade>
+        <ProductSection />
+      </ScrollFade>
+
+      <ScrollFade>
+        <ProductSpecs />
+      </ScrollFade>
+
+      <ScrollFade>
+        <Benefits />
+      </ScrollFade>
+
+      <ScrollFade>
+        <CinematicBanner />
+      </ScrollFade>
+
+      <ScrollFade>
+        <About />
+      </ScrollFade>
+
+      <ScrollFade>
+        <Contact />
+      </ScrollFade>
+
       <Footer />
+
       <PageLoader />
       <ScrollToTop />
       <FloatingWhatsApp />
+
     </main>
   );
 }

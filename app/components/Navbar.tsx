@@ -1,27 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("home");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+  const menuRef = useRef<HTMLDivElement>(null);
 
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
+  const links = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Product", href: "#product" },
@@ -29,162 +18,198 @@ export default function Navbar() {
     { name: "Contact", href: "#contact" },
   ];
 
+  // Navbar shrink on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+
+      const sections = links.map((l) =>
+        document.querySelector(l.href)
+      );
+
+      const scroll = window.scrollY + 180;
+
+      sections.forEach((section, index) => {
+        if (!section) return;
+
+        const top = (section as HTMLElement).offsetTop;
+        const height = (section as HTMLElement).offsetHeight;
+
+        if (scroll >= top && scroll < top + height) {
+          setActive(links[index].href.replace("#", ""));
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  // Close menu outside click
+  useEffect(() => {
+    const close = (e: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", close);
+    return () =>
+      document.removeEventListener("mousedown", close);
+  }, []);
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="fixed inset-x-0 top-0 z-50 px-4"
-    >
+    <nav className="fixed top-0 left-0 z-50 w-full flex justify-center px-3 pt-4">
       <div
-        className={`mx-auto mt-5 max-w-7xl overflow-hidden rounded-full border transition-all duration-500 ${
+        ref={menuRef}
+        className={`
+        relative
+        flex
+        items-center
+        justify-between
+        w-full
+        max-w-7xl
+        rounded-full
+        border
+        border-white/40
+        backdrop-blur-3xl
+        transition-all
+        duration-500
+        overflow-hidden
+        ${
           scrolled
-            ? "border-[#d6c17d]/50 bg-[#fffdf7]/75 shadow-[0_18px_50px_rgba(0,0,0,0.12)] backdrop-blur-3xl"
-            : "border-white/30 bg-white/45 backdrop-blur-2xl"
-        }`}
+            ? "py-3 px-5 bg-white/80 shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
+            : "py-4 px-6 bg-white/60 shadow-[0_15px_60px_rgba(0,0,0,0.08)]"
+        }
+      `}
       >
-        <div className="flex items-center justify-between px-7 py-4">
+        {/* Reflection */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
+        {/* Gold Ring */}
+        <div className="absolute inset-0 rounded-full ring-1 ring-[#D4AF37]/15 pointer-events-none" />
+        {/* LOGO */}
+        <a
+          href="#home"
+          className="relative z-20 flex items-center gap-3"
+        >
+          <div className="relative h-11 w-11 overflow-hidden rounded-full border border-[#D4AF37]/25 bg-white shadow-md">
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              fill
+              className="object-contain p-1"
+            />
+          </div>
+          <div className="hidden sm:block">
+            <h2 className="font-semibold text-[#18442D]">
+              SuSiddha
+            </h2>
+            <p className="text-[10px] uppercase tracking-[0.35em] text-[#B8860B]">
+              Agro Products
+            </p>
+          </div>
+        </a>
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center gap-9">
+          {links.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className={`relative transition-all duration-300 font-medium
+              ${
+                active === link.href.replace("#", "")
+                  ? "text-[#18442D]"
+                  : "text-gray-600 hover:text-[#18442D]"
+              }
+            `}
+            >
+              {link.name}
+              <span
+                className={`absolute left-0 -bottom-2 h-[2px] bg-[#D4AF37] transition-all duration-300
 
-          {/* Logo */}
-
-          <a
-            href="#home"
-            className="group flex items-center gap-4"
-          >
-            <div className="relative">
-
-              <div className="absolute inset-0 rounded-full bg-[#d6c17d]/25 blur-xl transition-all duration-500 group-hover:scale-125" />
-
-              <Image
-                src="/images/logo.png"
-                alt="SuSiddha Logo"
-                width={58}
-                height={58}
-                className="relative rounded-full transition-all duration-500 group-hover:rotate-6 group-hover:scale-105"
+                ${
+                  active === link.href.replace("#", "")
+                    ? "w-full"
+                    : "w-0 group-hover:w-full"
+                }
+              `}
               />
+            </a>
+          ))}
+        </div>
+        {/* CTA */}
+        <a
+          href="#contact"
+          className="hidden lg:flex relative overflow-hidden rounded-full bg-gradient-to-r from-[#18442D] to-[#2D6A4F] px-7 py-3 text-sm font-semibold text-white transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+        >
+          Enquire →
+        </a>
+        {/* Mobile Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="lg:hidden z-30"
+        >
+          <svg
+            className="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            {menuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+        {/* Mobile Menu */}
+        <div
+          className={`absolute left-1/2 top-[85px] w-[94%] -translate-x-1/2 rounded-3xl border border-white/40 bg-white/90 backdrop-blur-3xl shadow-2xl transition-all duration-500 lg:hidden
 
-            </div>
-
-            <div>
-
-              <h2 className="text-[24px] font-bold tracking-wide text-[#17412C]">
-                SuSiddha
-              </h2>
-
-              <div className="flex items-center gap-2">
-
-                <span className="h-px w-6 bg-[#c8a34d]" />
-
-                <p className="text-[10px] uppercase tracking-[0.45em] text-[#b8932f]">
-                  Agro Products
-                </p>
-
-              </div>
-
-            </div>
-
-          </a>
-
-          {/* Desktop */}
-
-          <nav className="hidden lg:flex items-center gap-10">
-            {navLinks.map((link) => (
+          ${
+            menuOpen
+              ? "opacity-100 visible translate-y-0"
+              : "opacity-0 invisible -translate-y-5"
+          }
+        `}
+        >
+          <div className="flex flex-col p-8 gap-6">
+            {links.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="group relative overflow-hidden text-[15px] font-medium tracking-wide text-[#20492f] transition-colors duration-300 hover:text-[#b8932f]"
+                onClick={() => setMenuOpen(false)}
+                className={`text-lg transition
+
+                ${
+                  active === link.href.replace("#", "")
+                    ? "text-[#18442D] font-semibold"
+                    : "text-gray-600"
+                }
+              `}
               >
                 {link.name}
-
-                <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-[#c8a34d] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-          </nav>
-
-          {/* Right */}
-
-          <div className="hidden lg:flex items-center gap-7">
-
-            <div className="text-right">
-
-              <p className="text-[11px] uppercase tracking-[0.25em] text-gray-500">
-                Call Anytime
-              </p>
-
-              <a
-                href="tel:+918953565330"
-                className="font-semibold text-[#17412C] transition hover:text-[#b8932f]"
-              >
-                +91 89535 65330
-              </a>
-
-            </div>
-
             <a
               href="#contact"
-              className="group relative overflow-hidden rounded-full border border-[#c8a34d] bg-[#17412C] px-7 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(23,65,44,0.25)]"
+              onClick={() => setMenuOpen(false)}
+              className="rounded-full bg-[#18442D] py-4 text-center text-white font-semibold"
             >
-              <span className="absolute inset-0 translate-y-full bg-gradient-to-r from-[#d9bf6b] to-[#b8932f] transition-transform duration-500 group-hover:translate-y-0" />
-
-              <span className="relative group-hover:text-[#17412C]">
-                Enquire Now
-              </span>
+              Enquire Now
             </a>
-
           </div>
-
-          {/* Mobile */}
-
-          <button
-            onClick={() => setOpen(!open)}
-            className="rounded-full border border-[#d8c57d]/40 bg-white/60 p-2 backdrop-blur-xl transition hover:bg-white lg:hidden"
-          >
-            {open ? (
-              <X className="text-[#17412C]" size={26} />
-            ) : (
-              <Menu className="text-[#17412C]" size={26} />
-            )}
-          </button>
         </div>
-
-        <AnimatePresence>
-
-          {open && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.35 }}
-              className="border-t border-[#e7ddba] bg-[#fffdf8]/95 backdrop-blur-xl lg:hidden"
-            >
-              <div className="space-y-5 px-7 py-7">
-
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block text-lg font-medium text-[#17412C] transition hover:translate-x-2 hover:text-[#b8932f]"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-
-                <a
-                  href="#contact"
-                  onClick={() => setOpen(false)}
-                  className="mt-4 block rounded-full border border-[#c8a34d] bg-[#17412C] py-3 text-center font-semibold text-white transition hover:bg-[#215538]"
-                >
-                  Enquire Now
-                </a>
-
-              </div>
-            </motion.div>
-          )}
-
-        </AnimatePresence>
-
       </div>
-    </motion.header>
+    </nav>
   );
 }
