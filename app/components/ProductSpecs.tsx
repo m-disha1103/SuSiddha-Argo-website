@@ -128,39 +128,52 @@ export default function ProductSpecs() {
         </div>
 
         {/* Bottom Premium Banner */}
-        <div className="mt-20 rounded-[36px] border border-[#D4AF37]/20 bg-white/60 px-10 py-8 backdrop-blur-xl shadow-[0_20px_60px_rgba(31,81,50,.08)]">
-          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
-            <div>
+        <div className="mt-20 rounded-[36px] border border-[#D4AF37]/20 bg-white/60 px-6 sm:px-10 py-8 backdrop-blur-xl shadow-[0_20px_60px_rgba(31,81,50,.08)]">
+          <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+
+            {/* Left */}
+            <div className="text-center lg:text-left">
               <p className="uppercase tracking-[4px] text-sm font-semibold text-[#B8860B]">
                 SuSiddha Promise
               </p>
 
-              <h3 className="mt-2 text-3xl font-bold text-[#1F5132]">
-                Naturally Healthy. Traditionally Pure.
+              <h3 className="mt-2 text-2xl sm:text-3xl font-bold text-[#1F5132] leading-tight">
+                Naturally Healthy.
+                <br className="hidden sm:block" />
+                Traditionally Pure.
               </h3>
             </div>
 
-            <div className="flex gap-5">
-              <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/80 px-6 py-4 text-center shadow-md">
-                <h4 className="text-3xl font-bold text-[#1F5132]">100%</h4>
+            {/* Stats */}
+            <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-3 lg:w-auto">
+
+              <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/80 px-6 py-5 text-center shadow-md">
+                <h4 className="text-3xl font-bold text-[#1F5132]">
+                  100%
+                </h4>
                 <p className="mt-1 text-sm text-gray-600">
                   Natural
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/80 px-6 py-4 text-center shadow-md">
-                <h4 className="text-3xl font-bold text-[#1F5132]">Premium</h4>
+              <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/80 px-6 py-5 text-center shadow-md">
+                <h4 className="text-3xl font-bold text-[#1F5132]">
+                  Premium
+                </h4>
                 <p className="mt-1 text-sm text-gray-600">
                   Grade
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/80 px-6 py-4 text-center shadow-md">
-                <h4 className="text-3xl font-bold text-[#1F5132]">Fiber</h4>
+              <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/80 px-6 py-5 text-center shadow-md">
+                <h4 className="text-3xl font-bold text-[#1F5132]">
+                  Fiber
+                </h4>
                 <p className="mt-1 text-sm text-gray-600">
                   Rich
                 </p>
               </div>
+
             </div>
           </div>
         </div>

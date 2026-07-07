@@ -115,7 +115,7 @@ export default function Contact() {
 
           <p className="mx-auto mt-7 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-gray-600">
             Have questions, bulk order requirements or dealership enquiries?
-            We'd love to hear from you and help you choose the perfect rice for
+            We&apos;d love to hear from you and help you choose the perfect rice for
             your family or business.
           </p>
         </div>
