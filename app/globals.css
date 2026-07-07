@@ -1,43 +1,223 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffdf8;
+  --foreground: #1f5132;
+
+  --primary: #1f5132;
+  --primary-light: #2f7a4a;
+
+  --gold: #d4af37;
+  --gold-dark: #b8860b;
+
+  --cream: #fffdf8;
+  --cream-dark: #faf7ef;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* =====================================================
+   BASE
+===================================================== */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-body::before {
+
+/* Better rendering */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =====================================================
+   TEXT SELECTION
+===================================================== */
+
+::selection {
+  background: var(--gold);
+  color: white;
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f5ec;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    var(--primary),
+    var(--primary-light),
+    var(--gold)
+  );
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* =====================================================
+   TRANSITIONS
+===================================================== */
+
+button,
+a,
+input,
+textarea,
+svg,
+img {
+  transition:
+    color .3s ease,
+    background-color .3s ease,
+    border-color .3s ease,
+    transform .3s ease,
+    box-shadow .3s ease,
+    opacity .3s ease;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-130%) skewX(-20deg);
+  }
+
+  to {
+    transform: translateX(260%) skewX(-20deg);
+  }
+}
+
+.gold-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shine::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: url("https://www.transparenttextures.com/patterns/noise.png");
-  z-index: 50;
+  width: 40%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  transform: translateX(-150%) skewX(-20deg);
+}
+
+.gold-shine:hover::before {
+  animation: shine 1.1s ease;
+}
+
+/* =====================================================
+   REUSABLE UTILITIES
+===================================================== */
+
+.luxury-card {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 60px rgba(31, 81, 50, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+  transition: .45s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(212, 175, 55, .35);
+
+  box-shadow:
+    0 30px 80px rgba(31, 81, 50, .16),
+    inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+.section-padding {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.section-title {
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: -.03em;
+}
+
+.section-subtitle {
+  color: var(--gold-dark);
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  font-weight: 600;
 }

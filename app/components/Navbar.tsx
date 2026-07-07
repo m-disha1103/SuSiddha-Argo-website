@@ -75,16 +75,17 @@ export default function Navbar() {
         backdrop-blur-3xl
         transition-all
         duration-500
-        overflow-hidden
+        overflow-visible
         ${
           scrolled
-            ? "py-3 px-5 bg-white/80 shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
-            : "py-4 px-6 bg-white/60 shadow-[0_15px_60px_rgba(0,0,0,0.08)]"
+            ? "py-3 px-5 bg-white/75 shadow-[0_25px_80px_rgba(31,81,50,0.18)]"
+            : "py-4 px-6 bg-white/55 shadow-[0_20px_70px_rgba(31,81,50,0.12)]"
         }
       `}
       >
         {/* Reflection */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-[-35%] h-full w-[30%] rotate-12 bg-gradient-to-r from-transparent via-white/35 to-transparent blur-2xl animate-pulse" />
         {/* Gold Ring */}
         <div className="absolute inset-0 rounded-full ring-1 ring-[#D4AF37]/15 pointer-events-none" />
         {/* LOGO */}
@@ -92,7 +93,7 @@ export default function Navbar() {
           href="#home"
           className="relative z-20 flex items-center gap-3"
         >
-          <div className="relative h-11 w-11 overflow-hidden rounded-full border border-[#D4AF37]/25 bg-white shadow-md">
+          <div className="relative h-11 w-11 overflow-visible rounded-full border border-[#D4AF37]/30 bg-white shadow-lg transition duration-500 hover:rotate-6 hover:scale-110">
             <Image
               src="/images/logo.png"
               alt="logo"
@@ -115,7 +116,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className={`relative transition-all duration-300 font-medium
+              className={`group relative transition-all duration-300 font-medium
               ${
                 active === link.href.replace("#", "")
                   ? "text-[#18442D]"
@@ -140,14 +141,19 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href="#contact"
-          className="hidden lg:flex relative overflow-hidden rounded-full bg-gradient-to-r from-[#18442D] to-[#2D6A4F] px-7 py-3 text-sm font-semibold text-white transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+          className="group hidden lg:flex relative overflow-visible rounded-full bg-gradient-to-r from-[#18442D] to-[#2D6A4F] px-7 py-3 text-sm font-semibold text-white transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
         >
-          Enquire →
+          {/* Gold Shine */}
+          <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+
+          <span className="relative z-10">
+            Enquire →
+          </span>
         </a>
         {/* Mobile Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden z-30"
+          className="lg:hidden z-[9999] text-[#1F5132]"
         >
           <svg
             className="w-7 h-7"
@@ -173,7 +179,7 @@ export default function Navbar() {
         </button>
         {/* Mobile Menu */}
         <div
-          className={`absolute left-1/2 top-[85px] w-[94%] -translate-x-1/2 rounded-3xl border border-white/40 bg-white/90 backdrop-blur-3xl shadow-2xl transition-all duration-500 lg:hidden
+          className={`absolute z-[999] left-1/2 top-full mt-3 w-[94%] -translate-x-1/2 rounded-3xl border border-white/50 bg-white/75 backdrop-blur-3xl backdrop-saturate-150 shadow-2xl transition-all duration-500 lg:hidden
 
           ${
             menuOpen

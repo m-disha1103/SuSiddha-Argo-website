@@ -1,127 +1,245 @@
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#123524] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-[#123524] via-[#17462E] to-[#0E2A1D] text-white">
+      {/* Background Effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -left-32 top-0 h-[380px] w-[380px] rounded-full bg-[#D4AF37]/10 blur-[120px]" />
+        <div className="absolute right-0 bottom-0 h-[420px] w-[420px] rounded-full bg-[#1F5132]/40 blur-[140px]" />
+
+        <img
+          src="/images/wheat-left.png"
+          alt=""
+          className="absolute left-0 top-10 w-72 opacity-[0.05]"
+        />
+
+        <img
+          src="/images/wheat-right.png"
+          alt=""
+          className="absolute right-0 bottom-0 w-72 rotate-180 opacity-[0.05]"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
+        <div className="grid gap-10 lg:grid-cols-4 md:grid-cols-2">
           {/* Logo */}
           <div>
-            <div className="flex items-center gap-3">
-              <Image
-                src="/images/logo.png"
-                alt="SuSiddha Logo"
-                width={60}
-                height={60}
-                className="rounded-full"
-              />
+            <div className="flex items-center gap-4">
+              <div className="rounded-full bg-white/10 p-2 backdrop-blur-xl border border-white/10">
+                <Image
+                  src="/images/logo.png"
+                  alt="SuSiddha Logo"
+                  width={62}
+                  height={62}
+                  className="rounded-full"
+                />
+              </div>
 
               <div>
-                <h2 className="text-2xl font-bold">SuSiddha</h2>
-                <p className="text-sm tracking-widest text-[#D6B25E]">
-                  AGRO PRODUCTS
+                <h2 className="text-3xl font-bold tracking-wide">
+                  SuSiddha
+                </h2>
+
+                <p className="mt-1 text-xs uppercase tracking-[6px] text-[#D4AF37]">
+                  Agro Products
                 </p>
               </div>
             </div>
 
-            <p className="mt-6 leading-7 text-gray-300">
-              Delivering premium unpolished Sona Masuri rice with purity,
-              nutrition, and authentic taste directly from trusted farms.
+            <div className="mt-7 h-[2px] w-24 bg-gradient-to-r from-[#D4AF37] to-transparent" />
+
+            <p className="mt-7 leading-8 text-white/75">
+              Delivering premium unpolished Sona Masuri rice with authentic
+              taste, natural nutrition and unmatched quality directly from
+              trusted Indian farms.
             </p>
+
+            <div className="mt-8 flex gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-white/10 backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-[#D4AF37]">
+                🌾
+              </div>
+
+              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-white/10 backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-[#D4AF37]">
+                🌱
+              </div>
+
+              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-white/10 backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-[#D4AF37]">
+                🌿
+              </div>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-5 text-xl font-semibold">Quick Links</h3>
+            <h3 className="text-2xl font-bold">
+              Quick Links
+            </h3>
 
-            <ul className="space-y-3 text-gray-300">
-              <li>
-                <a href="#home" className="transition hover:text-[#D6B25E]">
-                  Home
-                </a>
-              </li>
+            <div className="mt-3 h-[2px] w-16 bg-[#D4AF37]" />
 
-              <li>
-                <a href="#about" className="transition hover:text-[#D6B25E]">
-                  About
-                </a>
-              </li>
+            <ul className="mt-8 space-y-5">
+              {[
+                ["Home", "#home"],
+                ["About", "#about"],
+                ["Product", "#product"],
+                ["Benefits", "#benefits"],
+                ["Contact", "#contact"],
+              ].map(([title, href]) => (
+                <li key={title}>
+                  <a
+                    href={href}
+                    className="group flex items-center justify-between text-white/75 transition duration-300 hover:text-[#D4AF37]"
+                  >
+                    {title}
 
-              <li>
-                <a href="#product" className="transition hover:text-[#D6B25E]">
-                  Product
-                </a>
-              </li>
-
-              <li>
-                <a href="#benefits" className="transition hover:text-[#D6B25E]">
-                  Benefits
-                </a>
-              </li>
-
-              <li>
-                <a href="#contact" className="transition hover:text-[#D6B25E]">
-                  Contact
-                </a>
-              </li>
+                    <ArrowUpRight
+                      size={17}
+                      className="opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100"
+                    />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="mb-5 text-xl font-semibold">Contact</h3>
+            <h3 className="text-2xl font-bold">
+              Contact
+            </h3>
 
-            <div className="space-y-5 text-gray-300">
+            <div className="mt-3 h-[2px] w-16 bg-[#D4AF37]" />
+
+            <div className="mt-8 space-y-6">
               <a
                 href="tel:+918953565330"
-                className="flex items-center gap-3 transition hover:text-[#D6B25E]"
+                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition duration-500 hover:border-[#D4AF37]/30 hover:bg-white/10"
               >
-                <Phone size={18} />
-                <span>+91 89535 65330</span>
+                <div className="rounded-xl bg-[#D4AF37] p-3 text-[#123524]">
+                  <Phone size={18} />
+                </div>
+
+                <span className="text-white/80 group-hover:text-white">
+                  +91 89535 65330
+                </span>
               </a>
 
               <a
                 href="mailto:susiddhaagro@gmail.com"
-                className="flex items-center gap-3 transition hover:text-[#D6B25E]"
+                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition duration-500 hover:border-[#D4AF37]/30 hover:bg-white/10"
               >
-                <Mail size={18} />
-                <span>susiddhaagro@gmail.com</span>
+                <div className="rounded-xl bg-[#D4AF37] p-3 text-[#123524]">
+                  <Mail size={18} />
+                </div>
+
+                <span className="text-white/80 group-hover:text-white">
+                  susiddhaagro@gmail.com
+                </span>
               </a>
 
-              <div className="flex items-start gap-3">
-                <MapPin size={18} className="mt-1 shrink-0" />
-                <p>
-                  Plot No. 16, Mini Industrial Area,
+              <div className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
+                <div className="rounded-xl bg-[#D4AF37] p-3 text-[#123524] h-fit">
+                  <MapPin size={18} />
+                </div>
+
+                <p className="leading-7 text-white/80">
+                  Plot No.16,
                   <br />
-                  Mathuranagar, Anandnagar,
+                  Mini Industrial Area,
                   <br />
-                  District Maharajganj (U.P.), India
+                  Mathuranagar,
+                  <br />
+                  Anandnagar,
+                  <br />
+                  District Maharajganj,
+                  <br />
+                  Uttar Pradesh, India.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Social */}
+          {/* Right Card */}
           <div>
-            <h3 className="mb-5 text-xl font-semibold">Follow Us</h3>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <p className="text-gray-300">
-                Our social media pages will be available soon.
+            <div className="rounded-[34px] border border-white/10 bg-white/10 p-8 backdrop-blur-2xl shadow-2xl">
+              <p className="uppercase tracking-[4px] text-sm font-semibold text-[#D4AF37]">
+                SuSiddha Promise
               </p>
 
-              <p className="mt-3 text-sm text-gray-400">
-                For any enquiry, please contact us via phone or email.
+              <h3 className="mt-4 text-3xl font-bold leading-tight">
+                Premium Quality
+                <br />
+                From Farm
+                <br />
+                To Family
+              </h3>
+
+              <p className="mt-6 leading-8 text-white/75">
+                Every grain is carefully selected and naturally processed to
+                preserve nutrition, aroma and authentic traditional taste.
               </p>
+
+              <div className="mt-8 grid grid-cols-3 gap-3">
+                <div className="rounded-2xl bg-white/10 py-4 text-center">
+                  <h4 className="text-xl font-bold text-[#D4AF37]">
+                    100%
+                  </h4>
+
+                  <p className="mt-1 text-xs text-white/70">
+                    Natural
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-white/10 py-4 text-center">
+                  <h4 className="text-xl font-bold text-[#D4AF37]">
+                    Low GI
+                  </h4>
+
+                  <p className="mt-1 text-xs text-white/70">
+                    Healthy
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-white/10 py-4 text-center">
+                  <h4 className="text-xl font-bold text-[#D4AF37]">
+                    Fiber
+                  </h4>
+
+                  <p className="mt-1 text-xs text-white/70">
+                    Rich
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} SuSiddha Agro Products. All Rights
-          Reserved.
+
+        <div className="mt-16 border-t border-white/10 pt-8">
+          <div className="flex flex-col items-center justify-between gap-5 text-center lg:flex-row">
+            <p className="text-white/60">
+              © {new Date().getFullYear()}{" "}
+              <span className="font-semibold text-[#D4AF37]">
+                SuSiddha Agro Products
+              </span>
+              . All Rights Reserved.
+            </p>
+
+            <div className="flex items-center gap-3 text-sm text-white/50">
+              <span>Premium Quality</span>
+
+              <span className="h-1 w-1 rounded-full bg-[#D4AF37]" />
+
+              <span>Natural Nutrition</span>
+
+              <span className="h-1 w-1 rounded-full bg-[#D4AF37]" />
+
+              <span>Traditional Processing</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
