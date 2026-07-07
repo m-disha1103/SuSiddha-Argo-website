@@ -6,9 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-
-    sitemap: "https://susiddhaagro.com/sitemap.xml",
-
-    host: "https://susiddhaagro.com",
+    sitemap:
+      "https://su-siddha-argo-website.vercel.app/sitemap.xml",
   };
 }
