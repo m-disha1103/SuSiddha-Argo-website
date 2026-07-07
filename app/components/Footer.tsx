@@ -22,11 +22,11 @@ export default function Footer() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-10 lg:grid-cols-4 md:grid-cols-2">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 sm:py-20">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4">
           {/* Logo */}
           <div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center gap-4 sm:justify-start">
               <div className="rounded-full bg-white/10 p-2 backdrop-blur-xl border border-white/10">
                 <Image
                   src="/images/logo.png"
@@ -37,7 +37,7 @@ export default function Footer() {
                 />
               </div>
 
-              <div>
+              <div className="text-center sm:text-left">
                 <h2 className="text-3xl font-bold tracking-wide">
                   SuSiddha
                 </h2>
@@ -50,13 +50,13 @@ export default function Footer() {
 
             <div className="mt-7 h-[2px] w-24 bg-gradient-to-r from-[#D4AF37] to-transparent" />
 
-            <p className="mt-7 leading-8 text-white/75">
+            <p className="mt-7 text-center leading-8 text-white/75 sm:text-left">
               Delivering premium unpolished Sona Masuri rice with authentic
               taste, natural nutrition and unmatched quality directly from
               trusted Indian farms.
             </p>
 
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex justify-center gap-4 sm:justify-start">
               <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-white/10 backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-[#D4AF37]">
                 🌾
               </div>
@@ -73,13 +73,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-2xl font-bold">
+            <h3 className="text-center text-2xl font-bold md:text-left">
               Quick Links
             </h3>
 
-            <div className="mt-3 h-[2px] w-16 bg-[#D4AF37]" />
+            <div className="mx-auto mt-3 h-[2px] w-16 bg-[#D4AF37] md:mx-0" />
 
-            <ul className="mt-8 space-y-5">
+            <ul className="mt-8 space-y-5 text-center md:text-left">
               {[
                 ["Home", "#home"],
                 ["About", "#about"],
@@ -106,13 +106,13 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-2xl font-bold">
+            <h3 className="text-center text-2xl font-bold md:text-left">
               Contact
             </h3>
 
-            <div className="mt-3 h-[2px] w-16 bg-[#D4AF37]" />
+            <div className="mx-auto mt-3 h-[2px] w-16 bg-[#D4AF37] md:mx-0" />
 
-            <div className="mt-8 space-y-6">
+            <div className="mt-8 space-y-5">
               <a
                 href="tel:+918953565330"
                 className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition duration-500 hover:border-[#D4AF37]/30 hover:bg-white/10"
@@ -121,7 +121,7 @@ export default function Footer() {
                   <Phone size={18} />
                 </div>
 
-                <span className="text-white/80 group-hover:text-white">
+                <span className="break-all text-sm text-white/80 sm:text-base group-hover:text-white">
                   +91 89535 65330
                 </span>
               </a>
@@ -134,7 +134,7 @@ export default function Footer() {
                   <Mail size={18} />
                 </div>
 
-                <span className="text-white/80 group-hover:text-white">
+                <span className="break-all text-sm text-white/80 sm:text-base group-hover:text-white">
                   susiddhaagro@gmail.com
                 </span>
               </a>
@@ -163,12 +163,12 @@ export default function Footer() {
 
           {/* Right Card */}
           <div>
-            <div className="rounded-[34px] border border-white/10 bg-white/10 p-8 backdrop-blur-2xl shadow-2xl">
+            <div className="rounded-[34px] border border-white/10 bg-white/10 p-6 sm:p-8 backdrop-blur-2xl shadow-2xl">
               <p className="uppercase tracking-[4px] text-sm font-semibold text-[#D4AF37]">
                 SuSiddha Promise
               </p>
 
-              <h3 className="mt-4 text-3xl font-bold leading-tight">
+              <h3 className="mt-4 text-2xl font-bold leading-tight sm:text-3xl">
                 Premium Quality
                 <br />
                 From Farm
@@ -181,8 +181,8 @@ export default function Footer() {
                 preserve nutrition, aroma and authentic traditional taste.
               </p>
 
-              <div className="mt-8 grid grid-cols-3 gap-3">
-                <div className="rounded-2xl bg-white/10 py-4 text-center">
+              <div className="mt-8 grid grid-cols-3 gap-2 sm:gap-3">
+                <div className="rounded-2xl bg-white/10 px-2 py-4 text-center">
                   <h4 className="text-xl font-bold text-[#D4AF37]">
                     100%
                   </h4>
@@ -192,7 +192,7 @@ export default function Footer() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl bg-white/10 py-4 text-center">
+                <div className="rounded-2xl bg-white/10 px-2 py-4 text-center">
                   <h4 className="text-xl font-bold text-[#D4AF37]">
                     Low GI
                   </h4>
@@ -202,7 +202,7 @@ export default function Footer() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl bg-white/10 py-4 text-center">
+                <div className="rounded-2xl bg-white/10 px-2 py-4 text-center">
                   <h4 className="text-xl font-bold text-[#D4AF37]">
                     Fiber
                   </h4>
@@ -219,7 +219,7 @@ export default function Footer() {
         {/* Bottom */}
 
         <div className="mt-16 border-t border-white/10 pt-8">
-          <div className="flex flex-col items-center justify-between gap-5 text-center lg:flex-row">
+          <div className="flex flex-col items-center justify-between gap-6 text-center lg:flex-row lg:text-left">
             <p className="text-white/60">
               © {new Date().getFullYear()}{" "}
               <span className="font-semibold text-[#D4AF37]">
@@ -228,7 +228,7 @@ export default function Footer() {
               . All Rights Reserved.
             </p>
 
-            <div className="flex items-center gap-3 text-sm text-white/50">
+            <div className="flex flex-wrap items-center justify-center gap-3 text-center text-sm text-white/50">
               <span>Premium Quality</span>
 
               <span className="h-1 w-1 rounded-full bg-[#D4AF37]" />

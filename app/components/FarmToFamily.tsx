@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function FarmToFamily() {
   return (
     <>
@@ -70,21 +71,24 @@ export default function FarmToFamily() {
 
             {/* Processing */}
             <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
-              <img
-                src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80"
-                alt="Rice Processing Plant"
+              <Image
+                src="/images/sona-masuri-rice.jpg"
+                alt="Unpolished Sona Masuri Rice"
+                width={900}
+                height={600}
                 className="h-64 w-full object-cover transition duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1F5132]/60 via-transparent to-transparent"></div>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1F5132]/60 via-transparent to-transparent" />
 
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-[#1F5132]">
                   Careful Processing
                 </h3>
 
-                <p className="text-gray-600 mt-3">
+                <p className="mt-3 text-gray-600">
                   Processed with care to preserve natural nutrition, aroma,
-                  texture, and authentic taste.
+                  texture and authentic taste of every grain.
                 </p>
               </div>
             </div>

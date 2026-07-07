@@ -59,7 +59,7 @@ export default function Navbar() {
       document.removeEventListener("mousedown", close);
   }, []);
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full flex justify-center px-3 pt-4">
+    <nav className="fixed top-0 left-0 z-50 flex w-full justify-center px-3 pt-3 sm:px-4 sm:pt-4">
       <div
         ref={menuRef}
         className={`
@@ -78,8 +78,8 @@ export default function Navbar() {
         overflow-visible
         ${
           scrolled
-            ? "py-3 px-5 bg-white/75 shadow-[0_25px_80px_rgba(31,81,50,0.18)]"
-            : "py-4 px-6 bg-white/55 shadow-[0_20px_70px_rgba(31,81,50,0.12)]"
+          ? "px-4 py-3 sm:px-5 bg-white/75 shadow-[0_25px_80px_rgba(31,81,50,0.18)]"
+          : "px-4 py-3.5 sm:px-6 sm:py-4 bg-white/55 shadow-[0_20px_70px_rgba(31,81,50,0.12)]"
         }
       `}
       >
@@ -93,7 +93,7 @@ export default function Navbar() {
           href="#home"
           className="relative z-20 flex items-center gap-3"
         >
-          <div className="relative h-11 w-11 overflow-visible rounded-full border border-[#D4AF37]/30 bg-white shadow-lg transition duration-500 hover:rotate-6 hover:scale-110">
+          <div className="relative h-10 w-10 sm:h-11 sm:w-11 overflow-visible rounded-full border border-[#D4AF37]/30 bg-white shadow-lg transition duration-500 hover:rotate-6 hover:scale-110">
             <Image
               src="/images/logo.png"
               alt="logo"
@@ -152,8 +152,10 @@ export default function Navbar() {
         </a>
         {/* Mobile Button */}
         <button
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden z-[9999] text-[#1F5132]"
+          className="z-[9999] flex h-11 w-11 items-center justify-center rounded-full lg:hidden text-[#1F5132] transition hover:bg-white/30"
         >
           <svg
             className="w-7 h-7"
@@ -179,7 +181,7 @@ export default function Navbar() {
         </button>
         {/* Mobile Menu */}
         <div
-          className={`absolute z-[999] left-1/2 top-full mt-3 w-[94%] -translate-x-1/2 rounded-3xl border border-white/50 bg-white/75 backdrop-blur-3xl backdrop-saturate-150 shadow-2xl transition-all duration-500 lg:hidden
+          className={`absolute z-[999] left-1/2 top-full mt-3 w-[calc(100%-1rem)] max-w-md -translate-x-1/2 rounded-3xl border border-white/50 bg-white/75 backdrop-blur-3xl backdrop-saturate-150 shadow-2xl transition-all duration-500 lg:hidden
 
           ${
             menuOpen
@@ -188,13 +190,13 @@ export default function Navbar() {
           }
         `}
         >
-          <div className="flex flex-col p-8 gap-6">
+          <div className="flex flex-col gap-5 p-6 sm:p-8">
             {links.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-lg transition
+                className={`rounded-xl px-3 py-2 text-lg transition duration-300
 
                 ${
                   active === link.href.replace("#", "")
@@ -209,7 +211,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="rounded-full bg-[#18442D] py-4 text-center text-white font-semibold"
+              className="rounded-full bg-gradient-to-r from-[#18442D] to-[#2D6A4F] py-4 text-center font-semibold text-white transition-all duration-300 hover:shadow-xl"
             >
               Enquire Now
             </a>

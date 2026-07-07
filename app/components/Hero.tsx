@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#FBF8F1] px-6 pt-32 pb-20"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#FBF8F1] px-5 sm:px-6 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20"
     >
       {/* 🌫️ Grain Texture Overlay */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-multiply bg-[url('/images/rice-grain.png')]" />
@@ -60,7 +60,7 @@ export default function Hero() {
             </span>
 
             {/* Title */}
-            <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-[1.03] drop-shadow-[0_10px_25px_rgba(255,255,255,0.5)]">
+            <h1 className="mt-6 text-4xl leading-[1.08] sm:text-5xl md:text-7xl lg:text-8xl font-semibold drop-shadow-[0_10px_25px_rgba(255,255,255,0.5)]">
               <span className="block bg-gradient-to-r from-[#18442D] via-[#2D6A4F] to-[#18442D] bg-clip-text text-transparent">
                 Pure Rice.
               </span>
@@ -70,12 +70,12 @@ export default function Hero() {
             </h1>
 
             {/* Brand */}
-            <h2 className="mt-6 text-2xl font-medium text-gray-700">
+            <h2 className="mt-5 text-xl sm:text-2xl font-medium text-gray-700">
               SuSiddha Agro Products
             </h2>
 
             {/* Subtitle */}
-            <p className="mt-6 text-lg text-gray-600 leading-8">
+            <p className="mt-5 text-base sm:text-lg text-gray-600 leading-7 sm:leading-8">
               Crafted from carefully selected Sona Masuri paddy, naturally unpolished
               to preserve authentic taste, nutrition, and everyday wellness.
             </p>
@@ -89,17 +89,17 @@ export default function Hero() {
             </div>
 
             {/* Buttons */}
-            <div className="mt-12 flex flex-wrap gap-5">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-5">
               <a
                 href="#contact"
-                className="group rounded-full bg-gradient-to-r from-[#18442D] to-[#2E6A48] px-8 py-4 font-semibold text-white shadow-[0_20px_45px_rgba(24,68,45,0.25)] transition-allduration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(24,68,45,0.35)]"
+                className="group w-full sm:w-auto text-center rounded-full bg-gradient-to-r from-[#18442D] to-[#2E6A48] px-8 py-4 font-semibold text-white shadow-[0_20px_45px_rgba(24,68,45,0.25)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(24,68,45,0.35)]"
               >
                 Contact Us
               </a>
 
               <a
                 href="#about"
-                className="rounded-full border border-[#D4AF37] bg-white/60 backdrop-blur-xl px-8 py-4 font-semibold text-[#B8860B] transition-all duration-500 hover:bg-[#D4AF37] hover:text-white hover:-translate-y-1"
+                className="w-full sm:w-auto text-center rounded-full border border-[#D4AF37] bg-white/60 backdrop-blur-xl px-8 py-4 font-semibold text-[#B8860B] transition-all duration-500 hover:bg-[#D4AF37] hover:text-white hover:-translate-y-1"
               >
                 Learn More
               </a>
@@ -153,7 +153,7 @@ export default function Hero() {
             {/* Product */}
             <div className="absolute h-[380px] w-[380px] rounded-full bg-[#D4AF37]/15 blur-[120px] animate-pulse"/>
             {/* Product Card */}
-            <div className="group relative z-20 w-[320px] sm:w-[380px] md:w-[430px] lg:w-[470px] xl:w-[500px] rounded-[42px] border border-white/60 bg-white/70 p-5 backdrop-blur-3xl shadow-[0_45px_120px_rgba(0,0,0,0.18)] transition-all duration-700 hover:-translate-y-2">
+            <div className="group relative z-20 w-[280px] xs:w-[310px] sm:w-[380px] md:w-[430px] lg:w-[470px] xl:w-[500px] rounded-[42px] border border-white/60 bg-white/70 p-5 backdrop-blur-3xl shadow-[0_45px_120px_rgba(0,0,0,0.18)] transition-all duration-700 hover:-translate-y-2">
               {/* Glass Reflection */}
               <div
                 className="pointer-events-none absolute inset-0 rounded-[42px]"
@@ -192,7 +192,7 @@ export default function Hero() {
               </div>
 
               {/*floating premium badge */}
-              <div className="absolute -top-6 right-2 right-2 z-30 rounded-full border border-[#D4AF37]/20 bg-white/80 backdrop-blur-xl px-6 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.12)]">
+              <div className="absolute -top-5 right-3 sm:-top-6 sm:right-2 z-30 rounded-full border border-[#D4AF37]/20 bg-white/80 backdrop-blur-xl px-4 sm:px-6 py-2.5 sm:py-3 shadow-[0_20px_50px_rgba(0,0,0,0.12)]">
                 <p className="text-[10px] uppercase tracking-[0.35em] text-[#B8860B]">
                   PREMIUM
                 </p>
@@ -227,7 +227,7 @@ export default function Hero() {
       </div>
 
       {/* 👇 Scroll Hint (NO motion, pure CSS animation) */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
         <div className="h-10 w-6 rounded-full border border-[#1F5132] flex justify-center">
           <div className="h-2 w-2 bg-[#1F5132] rounded-full mt-2 animate-bounce"></div>
         </div>

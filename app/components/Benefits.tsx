@@ -5,7 +5,7 @@ export default function Benefits() {
   return (
     <section
       id="benefits"
-      className="relative overflow-hidden bg-gradient-to-br from-[#FFFDF8] via-[#FAF6EC] to-[#F5E9C8] py-28"
+      className="relative overflow-hidden bg-gradient-to-br from-[#FFFDF8] via-[#FAF6EC] to-[#F5E9C8] py-20 sm:py-24 lg:py-28"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
@@ -13,8 +13,8 @@ export default function Benefits() {
         <div className="absolute right-0 bottom-0 h-[520px] w-[520px] rounded-full bg-[#D4AF37]/10 blur-[160px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
           {/* LEFT */}
           <FadeIn>
             <div className="relative">
@@ -35,7 +35,7 @@ export default function Benefits() {
                 <div className="h-px w-16 bg-[#D4AF37]" />
               </div>
 
-              <h2 className="text-4xl font-bold leading-tight text-[#1F5132] sm:text-5xl lg:text-6xl">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] sm:leading-tight text-[#1F5132]">
                 Why Choose
                 <br />
                 <span className="bg-gradient-to-r from-[#B8860B] to-[#D4AF37] bg-clip-text text-transparent">
@@ -43,7 +43,7 @@ export default function Benefits() {
                 </span>
               </h2>
 
-              <p className="mt-8 max-w-xl text-lg leading-9 text-gray-600">
+              <p className="mt-7 max-w-xl text-base sm:text-lg leading-7 sm:leading-9 text-gray-600">
                 Every grain of SuSiddha Unpolished Sona Masuri Rice retains its
                 natural bran layer, preserving fiber, vitamins and minerals
                 while delivering authentic taste, aroma and wholesome nutrition
@@ -72,14 +72,14 @@ export default function Benefits() {
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="group flex items-start gap-5 rounded-[28px] border border-white/60 bg-white/65 p-6 backdrop-blur-xl shadow-[0_15px_45px_rgba(31,81,50,0.08)] transition-all duration-500 hover:-translate-y-2 hover:border-[#D4AF37]/40 hover:bg-white/80 hover:shadow-[0_25px_60px_rgba(31,81,50,0.16)]"
+                    className="group flex items-start gap-4 sm:gap-5 rounded-[28px] border border-white/60 bg-white/65 p-5 sm:p-6 backdrop-blur-xl shadow-[0_15px_45px_rgba(31,81,50,0.08)] transition-all duration-500 hover:-translate-y-2 hover:border-[#D4AF37]/40 hover:bg-white/80 hover:shadow-[0_25px_60px_rgba(31,81,50,0.16)]"
                   >
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#1F5132] to-[#2E6E46] text-lg font-bold text-white shadow-lg transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                       ✓
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold text-[#1F5132] transition duration-300 group-hover:text-[#B8860B]">
+                      <h3 className="text-base sm:text-lg font-bold text-[#1F5132] transition duration-300 group-hover:text-[#B8860B]">
                         {item.title}
                       </h3>
 
@@ -92,7 +92,7 @@ export default function Benefits() {
               </div>
 
               {/* Stats */}
-              <div className="mt-10 grid grid-cols-3 gap-4">
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
                   <h3 className="text-3xl font-bold text-[#1F5132]">100%</h3>
                   <p className="mt-2 text-sm text-gray-600">Natural</p>
@@ -115,21 +115,21 @@ export default function Benefits() {
 
           {/* RIGHT SIDE */}
           <FadeIn delay={0.3}>
-            <div className="relative flex justify-center items-center">
+            <div className="relative flex items-center justify-center mt-10 lg:mt-0">
 
               {/* Background Glow */}
               <div className="absolute h-[560px] w-[560px] rounded-full bg-[#D4AF37]/20 blur-[140px]" />
 
               {/* Decorative Wheat */}
               <Image
-                src="/images/wheat-left.png"
+                src="/images/wheat-right.png"
                 alt=""
                 width={180}
                 height={180}
-                className="absolute -left-12 top-10 w-32 opacity-60 rotate-[-18deg] pointer-events-none"
+                className="absolute -left-12 top-10 hidden sm:block w-32 opacity-60 rotate-[-18deg] pointer-events-none"
               />
               <Image
-                src="/images/wheat-right.png"
+                src="/images/wheat-left.png"
                 alt=""
                 width={158}
                 height={158}
@@ -166,17 +166,17 @@ export default function Benefits() {
                 <div className="pointer-events-none absolute top-10 left-8 h-28 w-20 rounded-full bg-white/20 blur-xl" />
 
                 {/* Premium Badge */}
-                <div className="absolute -bottom-8 -left-8 rounded-full border-4 border-white bg-gradient-to-br from-[#1F5132] to-[#2F7A4A] h-32 w-32 shadow-2xl flex flex-col justify-center items-center text-center">
+                <div className="absolute bottom-4 left-4 sm:-bottom-8 sm:-left-8 rounded-full border-4 border-white bg-gradient-to-br from-[#1F5132] to-[#2F7A4A] h-20 w-20 sm:h-32 sm:w-32 shadow-2xl flex flex-col justify-center items-center text-center">
                   <span className="text-white text-xs tracking-[3px] uppercase">
                     100%
                   </span>
-                  <span className="text-[#F8E8B0] text-2xl font-bold leading-none">
+                  <span className="text-[#F8E8B0] text-lg sm:text-2xl font-bold leading-none">
                     Natural
                   </span>
                 </div>
 
                 {/* Floating Card */}
-                <div className="absolute -right-10 top-12 rounded-3xl bg-white/90 backdrop-blur-xl border border-[#D4AF37]/30 px-6 py-5 shadow-2xl">
+                <div className="hidden sm:block absolute -right-10 top-12 rounded-3xl bg-white/90 backdrop-blur-xl border border-[#D4AF37]/30 px-6 py-5 shadow-2xl">
                   <p className="uppercase tracking-[3px] text-xs text-[#B8860B] font-semibold">
                     Premium Quality
                   </p>
@@ -186,7 +186,7 @@ export default function Benefits() {
                 </div>
 
                 {/* Bottom Card */}
-                <div className="absolute right-0 -bottom-10 rounded-[28px] border border-[#D4AF37]/25 bg-white/95 backdrop-blur-xl px-7 py-5 shadow-[0_20px_50px_rgba(0,0,0,.12)]">
+                <div className="hidden sm:block absolute right-0 -bottom-10 rounded-[28px] border border-[#D4AF37]/25 bg-white/95 backdrop-blur-xl px-7 py-5 shadow-[0_20px_50px_rgba(0,0,0,.12)]">
                   <p className="uppercase tracking-[3px] text-xs text-[#B8860B] font-semibold">
                     Rich Nutrition
                   </p>
@@ -197,8 +197,8 @@ export default function Benefits() {
                 </div>
 
                 {/* Floating Circle */}
-                <div className="absolute -top-6 right-10 h-10 w-10 rounded-full bg-[#D4AF37]/60 blur-sm" />
-                <div className="absolute bottom-24 -right-5 h-6 w-6 rounded-full bg-[#1F5132]/60 blur-sm" />
+                <div className="hidden lg:block absolute right-10 h-10 w-10 rounded-full bg-[#D4AF37]/60 blur-sm" />
+                <div className="hidden lg:block absolute  -right-5 h-6 w-6 rounded-full bg-[#1F5132]/60 blur-sm" />
                 </div>
               </div>
             </FadeIn>
