@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://susiddhaagro.com"), // Change after deployment if needed
+  metadataBase: new URL("https://su-siddha-argo-website.vercel.app"), // Change after deployment if needed
 
   title: {
     default: "SuSiddha Agro Products | Premium Unpolished Sona Masuri Rice",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
 
-    url: "https://susiddhaagro.com",
+    url: "https://su-siddha-argo-website.vercel.app",
 
     siteName: "SuSiddha Agro Products",
 
@@ -123,11 +123,11 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
     >
-      <body className="min-h-screen overflow-x-hidden bg-[#FFFDF8] font-sans text-[#1F5132] selection:bg-[#D4AF37] selection:text-white">
+      <body className="min-h-screen overflow-x-hidden bg-[#FFFDF8] font-sans text-[#1F5132] antialiased selection:bg-[#D4AF37] selection:text-white">
         {/* Premium Cursor Glow */}
         <CursorGlow />
 
@@ -139,3 +139,10 @@ export default function RootLayout({
     </html>
   );
 }
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#FFFDF8",
+  colorScheme: "light",
+};

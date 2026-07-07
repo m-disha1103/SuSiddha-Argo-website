@@ -58,6 +58,17 @@ export default function Navbar() {
     return () =>
       document.removeEventListener("mousedown", close);
   }, []);
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
   return (
     <nav className="fixed top-0 left-0 z-50 flex w-full justify-center px-3 pt-3 sm:px-4 sm:pt-4">
       <div
@@ -68,17 +79,17 @@ export default function Navbar() {
         items-center
         justify-between
         w-full
-        max-w-7xl
+        max-w-[1380px]
         rounded-full
         border
         border-white/40
-        backdrop-blur-3xl
+        backdrop-blur-[28px]
         transition-all
         duration-500
         overflow-visible
         ${
           scrolled
-          ? "px-4 py-3 sm:px-5 bg-white/75 shadow-[0_25px_80px_rgba(31,81,50,0.18)]"
+          ? "px-4 py-3 sm:px-5 bg-white/80 shadow-[0_25px_80px_rgba(31,81,50,0.18)]"
           : "px-4 py-3.5 sm:px-6 sm:py-4 bg-white/55 shadow-[0_20px_70px_rgba(31,81,50,0.12)]"
         }
       `}
@@ -93,7 +104,7 @@ export default function Navbar() {
           href="#home"
           className="relative z-20 flex items-center gap-3"
         >
-          <div className="relative h-10 w-10 sm:h-11 sm:w-11 overflow-visible rounded-full border border-[#D4AF37]/30 bg-white shadow-lg transition duration-500 hover:rotate-6 hover:scale-110">
+          <div className="relative h-11 w-11 sm:h-12 sm:w-12 overflow-visible rounded-full border border-[#D4AF37]/30 bg-white shadow-lg transition duration-500 hover:rotate-6 hover:scale-110">
             <Image
               src="/images/logo.png"
               alt="logo"
@@ -116,7 +127,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className={`group relative transition-all duration-300 font-medium
+              className={`group relative transition-all duration-500 ease-out font-medium
               ${
                 active === link.href.replace("#", "")
                   ? "text-[#18442D]"
@@ -126,7 +137,7 @@ export default function Navbar() {
             >
               {link.name}
               <span
-                className={`absolute left-0 -bottom-2 h-[2px] bg-[#D4AF37] transition-all duration-300
+                className={`absolute left-0 -bottom-2 h-[2px] bg-[#D4AF37] transition-all duration-500 ease-out
 
                 ${
                   active === link.href.replace("#", "")
@@ -181,12 +192,12 @@ export default function Navbar() {
         </button>
         {/* Mobile Menu */}
         <div
-          className={`absolute z-[999] left-1/2 top-full mt-3 w-[calc(100%-1rem)] max-w-md -translate-x-1/2 rounded-3xl border border-white/50 bg-white/75 backdrop-blur-3xl backdrop-saturate-150 shadow-2xl transition-all duration-500 lg:hidden
+          className={`absolute z-[999] left-1/2 top-full mt-3 w-[calc(100%-1rem)] max-w-md -translate-x-1/2 rounded-3xl border border-white/50 bg-white/80 backdrop-blur-[28px] backdrop-saturate-150 shadow-2xl transition-all duration-500 lg:hidden origin-top
 
           ${
             menuOpen
-              ? "opacity-100 visible translate-y-0"
-              : "opacity-0 invisible -translate-y-5"
+            ? "opacity-100 visible translate-y-0 scale-100"
+            : "opacity-0 invisible -translate-y-5 scale-95"
           }
         `}
         >
@@ -196,12 +207,12 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`rounded-xl px-3 py-2 text-lg transition duration-300
+                className={`rounded-xl px-4 py-3 text-lg transition duration-300
 
                 ${
                   active === link.href.replace("#", "")
-                    ? "text-[#18442D] font-semibold"
-                    : "text-gray-600"
+                    ? "bg-[#18442D]/8 text-[#18442D] font-semibold"
+                    : "text-gray-600 hover:bg-[#18442D]/5"
                 }
               `}
               >
@@ -211,7 +222,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="rounded-full bg-gradient-to-r from-[#18442D] to-[#2D6A4F] py-4 text-center font-semibold text-white transition-all duration-300 hover:shadow-xl"
+              className="rounded-full bg-gradient-to-r from-[#18442D] to-[#2D6A4F] py-4 text-center font-semibold text-white transition-all duration-500 ease-out hover:shadow-xl"
             >
               Enquire Now
             </a>
