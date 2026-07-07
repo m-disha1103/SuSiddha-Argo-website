@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -127,14 +128,14 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
     >
-      <body className="min-h-screen overflow-x-hidden bg-[#FFFDF8] font-sans text-[#1F5132] antialiased selection:bg-[#D4AF37] selection:text-white">
-        {/* Premium Cursor Glow */}
+      <body className="min-h-screen overflow-x-hidden bg-[#FFFDF8] font-sans text-[#1F5132] selection:bg-[#D4AF37] selection:text-white">
         <CursorGlow />
 
-        {/* Website */}
         <main className="relative isolate">
           {children}
         </main>
+
+        <GoogleAnalytics gaId="G-Z7Z9VQZ628" />
       </body>
     </html>
   );
