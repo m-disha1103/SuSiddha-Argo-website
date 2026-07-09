@@ -29,9 +29,11 @@ export default function FarmToFamily() {
           <div className="grid md:grid-cols-4 gap-8">
             {/* Seed Selection */}
             <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
-              <img
-                src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80"
-                alt="Seed Selection"
+              <Image
+                src="/images/seed.jpeg"
+                alt="Unpolished Sona Masuri Rice"
+                width={900}
+                height={600}
                 className="h-64 w-full object-cover transition duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1F5132]/60 via-transparent to-transparent"></div>
@@ -50,9 +52,11 @@ export default function FarmToFamily() {
 
             {/* Cultivation */}
             <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
-              <img
-                src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80"
-                alt="Green Rice Field"
+              <Image
+                src="/images/cultivation.jpeg"
+                alt="Unpolished Sona Masuri Rice"
+                width={900}
+                height={600}
                 className="h-64 w-full object-cover transition duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1F5132]/60 via-transparent to-transparent"></div>

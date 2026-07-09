@@ -58,6 +58,7 @@ export const metadata: Metadata = {
   applicationName: "SuSiddha Agro Products",
 
   category: "Food",
+  themeColor: "#1F5132",
 
   robots: {
     index: true,
@@ -79,27 +80,25 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    type: "website",
-    locale: "en_IN",
+  type: "website",
+  locale: "en_IN",
+  url: "https://su-siddha-argo-website.vercel.app",
+  siteName: "SuSiddha Agro Products",
 
-    url: "https://su-siddha-argo-website.vercel.app",
+  title: "SuSiddha Agro Products | Premium Unpolished Sona Masuri Rice",
 
-    siteName: "SuSiddha Agro Products",
+  description:
+    "Premium naturally processed unpolished Sona Masuri rice with authentic taste, rich nutrition and farm-fresh quality.",
 
-    title: "SuSiddha Agro Products | Premium Unpolished Sona Masuri Rice",
-
-    description:
-      "Premium naturally processed unpolished Sona Masuri rice with authentic taste, rich nutrition and farm-fresh quality.",
-
-    images: [
-      {
-        url: "/images/hero-rice.png",
-        width: 1200,
-        height: 630,
-        alt: "SuSiddha Premium Unpolished Sona Masuri Rice",
-      },
-    ],
-  },
+  images: [
+    {
+      url: "/images/og-banner.jpg",
+      width: 1200,
+      height: 630,
+      alt: "SuSiddha Agro Products - Premium Unpolished Sona Masuri Rice",
+    },
+  ],
+},
 
   twitter: {
     card: "summary_large_image",
@@ -109,14 +108,83 @@ export const metadata: Metadata = {
     description:
       "Premium naturally processed unpolished Sona Masuri rice.",
 
-    images: ["/images/hero-rice.png"],
+    images: ["/images/og-banner.jpg"],
   },
 
   alternates: {
     canonical: "/",
   },
 };
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://su-siddha-argo-website.vercel.app/#organization",
+      name: "SuSiddha Agro Products",
+      url: "https://su-siddha-argo-website.vercel.app",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://su-siddha-argo-website.vercel.app/images/logo.png",
+      },
+      image: "https://su-siddha-argo-website.vercel.app/images/logo.png",
+      email: "mailto:susiddhaagro@gmail.com",
+      telephone: "+91-8953565330",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress:
+          "Plot No.16, Mini Industrial Area, Mathuranagar, Anandnagar",
+        addressLocality: "Maharajganj",
+        addressRegion: "Uttar Pradesh",
+        addressCountry: "IN",
+      },
+    },
 
+    {
+      "@type": "WebSite",
+      "@id": "https://su-siddha-argo-website.vercel.app/#website",
+      url: "https://su-siddha-argo-website.vercel.app",
+      name: "SuSiddha Agro Products",
+      publisher: {
+        "@id":
+          "https://su-siddha-argo-website.vercel.app/#organization",
+      },
+      inLanguage: "en-IN",
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://su-siddha-argo-website.vercel.app/#webpage",
+      url: "https://su-siddha-argo-website.vercel.app",
+      name: "Premium Unpolished Sona Masuri Rice",
+      isPartOf: {
+        "@id":
+          "https://su-siddha-argo-website.vercel.app/#website",
+      },
+      about: {
+        "@id":
+          "https://su-siddha-argo-website.vercel.app/#organization",
+      },
+    },
+
+    {
+      "@type": "Product",
+      name: "Premium Unpolished Sona Masuri Rice",
+      brand: {
+        "@type": "Brand",
+        name: "SuSiddha",
+      },
+      category: "Rice",
+      countryOfOrigin: "India",
+      description:
+        "Premium naturally processed unpolished Sona Masuri rice rich in nutrition, fiber and authentic taste.",
+      manufacturer: {
+        "@id":
+          "https://su-siddha-argo-website.vercel.app/#organization",
+      },
+    },
+  ],
+};
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -129,8 +197,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
     >
       <body className="min-h-screen overflow-x-hidden bg-[#FFFDF8] font-sans text-[#1F5132] selection:bg-[#D4AF37] selection:text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaData),
+          }}
+        />
         <CursorGlow />
-
+        
         <main className="relative isolate">
           {children}
         </main>
