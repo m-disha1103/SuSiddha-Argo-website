@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import BrandPromise from "./components/BrandPromise";
 import FarmToFamily from "./components/FarmToFamily";
 import ProductSection from "./components/ProductSection";
-import ProductSpecs from "./components/ProductSpecs";
 import Benefits from "./components/Benefits";
 import CinematicBanner from "./components/CinematicBanner";
 import About from "./components/About";
@@ -38,11 +37,7 @@ export default function Home() {
       <ScrollFade>
         <ProductSection />
       </ScrollFade>
-
-      <ScrollFade>
-        <ProductSpecs />
-      </ScrollFade>
-
+      
       <ScrollFade>
         <Benefits />
       </ScrollFade>

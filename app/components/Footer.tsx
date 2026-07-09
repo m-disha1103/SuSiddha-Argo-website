@@ -118,7 +118,7 @@ export default function Footer() {
                 className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition duration-500 hover:border-[#D4AF37]/30 hover:bg-white/10"
               >
                 <div className="rounded-xl bg-[#D4AF37] p-3 text-[#123524]">
-                  <Phone size={18} />
+                  <Phone size={20} />
                 </div>
 
                 <span className="break-all text-sm text-white/80 sm:text-base group-hover:text-white">
@@ -131,7 +131,7 @@ export default function Footer() {
                 className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition duration-500 hover:border-[#D4AF37]/30 hover:bg-white/10"
               >
                 <div className="rounded-xl bg-[#D4AF37] p-3 text-[#123524]">
-                  <Mail size={18} />
+                  <Mail size={20} />
                 </div>
 
                 <span className="break-all text-sm text-white/80 sm:text-base group-hover:text-white">
@@ -141,7 +141,7 @@ export default function Footer() {
 
               <div className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
                 <div className="rounded-xl bg-[#D4AF37] p-3 text-[#123524] h-fit">
-                  <MapPin size={18} />
+                  <MapPin size={20} />
                 </div>
 
                 <p className="leading-7 text-white/80">
