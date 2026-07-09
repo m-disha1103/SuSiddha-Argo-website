@@ -110,7 +110,7 @@ export default function FarmToFamily() {
             <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
               <Image
                 src="/images/family-table.jpg"
-                alt="Healthy family enjoying SuSiddha Premium Rice"
+                alt=""
                 width={900}
                 height={600}
                 loading="lazy"
