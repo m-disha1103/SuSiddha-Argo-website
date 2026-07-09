@@ -83,13 +83,13 @@ export default function FAQ() {
         <div className="mt-20 space-y-5">
           {faqs.map((item, index) => (
             <FadeIn key={index} delay={index * 0.08}>
-              <div 
-              className={`overflow-hidden rounded-[32px] border backdrop-blur-xl shadow-[0_20px_60px_rgba(31,81,50,.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_35px_90px_rgba(31,81,50,.14)] ${
-                open === index
-                  ? "border-[#D4AF37]/40 bg-white/90"
-                  : "border-white/50 bg-white/70"
-              }`}
-
+              <div
+                className={`overflow-hidden rounded-[32px] border backdrop-blur-xl shadow-[0_20px_60px_rgba(31,81,50,.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_35px_90px_rgba(31,81,50,.14)] ${
+                  open === index
+                    ? "border-[#D4AF37]/40 bg-white/90"
+                    : "border-white/50 bg-white/70"
+                }`}
+              >
                 <button
                   onClick={() =>
                     setOpen(open === index ? null : index)
