@@ -7,11 +7,11 @@ export default function ProductSection() {
       id="product"
       className="relative overflow-hidden bg-gradient-to-br from-[#FBF8F1] via-[#FCFAF5] to-[#F4E8C8] py-20 sm:py-24 lg:py-32"
     >
-    <div className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-multiply bg-[url('/images/rice-grain.png')]" />
+    <div className="pointer-events-none absolute inset-0 hidden md:block opacity-[0.035] mix-blend-multiply bg-[url('/images/rice-grain.png')]" />
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -left-36 top-20 h-[520px] w-[520px] rounded-full  bg-gradient-to-r from-[#18442D] to-[#2F6B49] shadow-[0_20px_45px_rgba(24,68,45,.25)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(24,68,45,.35)]/8 blur-[150px]" />
-        <div className="absolute right-[-150px] bottom-[-100px] h-[600px] w-[600px] rounded-full bg-[#D4AF37]/15 blur-[170px]" />
+        <div className="absolute -left-36 top-20 h-[520px] w-[520px] rounded-full  bg-gradient-to-r from-[#18442D] to-[#2F6B49] shadow-[0_20px_45px_rgba(24,68,45,.25)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(24,68,45,.35)]/8 blur-[110px]" />
+        <div className="absolute right-[-150px] bottom-[-100px] h-[600px] w-[600px] rounded-full bg-[#D4AF37]/15 blur-[120px]" />
         <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#D4AF37]/10 to-transparent" />
       </div>
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
@@ -39,7 +39,7 @@ export default function ProductSection() {
               <div className="absolute -left-10 top-10 h-96 w-96 rounded-full bg-gradient-to-br from-[#18442D] to-[#2F6B49] text-white shadow-lg blur-[120px]" />
               <div className="absolute right-0 bottom-0 h-[500px] w-[500px] rounded-full bg-[#B8860B]/20 blur-[150px]" />
 
-              <div className="group relative rounded-[42px] border border-white/60 bg-white/70 p-5 backdrop-blur-3xl shadow-[0_45px_120px_rgba(0,0,0,.18)] transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_70px_150px_rgba(0,0,0,.22)]">
+              <div className="group relative rounded-[42px] border border-white/60 bg-white/70 p-5 backdrop-blur-2xl shadow-[0_45px_120px_rgba(0,0,0,.18)] transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_70px_150px_rgba(0,0,0,.22)]">
                 <div
                     className="pointer-events-none absolute inset-0 rounded-[42px]"
                     style={{
@@ -48,11 +48,14 @@ export default function ProductSection() {
                     }}
                 />
                 <Image
-                    src="/images/product.jpeg"
-                    alt="SuSiddha Premium Rice"
-                    width={700}
-                    height={700}
-                    className="relative z-10 w-[280px] sm:w-[360px] md:w-full rounded-[30px] transition-all duration-700 group-hover:scale-110 group-hover:rotate-[0.8deg]"
+                  src="/images/product.jpeg"
+                  alt="SuSiddha Premium Unpolished Sona Masuri Rice"
+                  width={700}
+                  height={700}
+                  loading="lazy"
+                  sizes="(max-width:768px) 280px, (max-width:1024px) 360px, 700px"
+                  quality={90}
+                  className="relative z-10 w-[280px] sm:w-[360px] md:w-full rounded-[30px] transition-all duration-700 group-hover:scale-105 group-hover:rotate-[0.5deg]"
                 />
                 <div className="absolute inset-0 overflow-hidden rounded-[42px]">
                     <div className="absolute -left-40 top-0 h-full w-24 rotate-12 bg-white/30 blur-xl transition-all duration-[1800ms] group-hover:left-[120%]" />

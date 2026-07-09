@@ -10,13 +10,13 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden bg-[#FBF8F1] px-5 sm:px-6 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20"
     >
       {/* 🌫️ Grain Texture Overlay */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-multiply bg-[url('/images/rice-grain.png')]" />
+      <div className="pointer-events-none absolute inset-0 hidden md:block opacity-[0.05] mix-blend-multiply bg-[url('/images/rice-grain.png')]" />
       
       {/* ✨ Premium Soft Background Blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-180px] left-1/2 -translate-x-1/2 h-[700px] w-[700px] rounded-full bg-[#D4AF37]/25 blur-[170px]" />
+        <div className="absolute top-[-180px] left-1/2 -translate-x-1/2 h-[700px] w-[700px] rounded-full bg-[#D4AF37]/20 blur-[130px]" />
         <div className="absolute bottom-[-200px] right-[-100px] h-[500px] w-[500px] rounded-full bg-[#1F5132]/10 blur-[140px]" />
-        <div className="absolute bottom-[-150px] right-[-120px] h-[650px] w-[650px] rounded-full bg-[#1F5132]/18 blur-[180px]" />
+        <div className="absolute bottom-[-150px] right-[-120px] h-[650px] w-[650px] rounded-full bg-[#1F5132]/15 blur-[130px]" />
         <div className="absolute inset-0">
         <div className="absolute top-0 left-0 h-full w-full bg-[radial-gradient(circle_at_20%_20%,rgba(212,175,55,0.08),transparent_35%)]"/>
         <div className="absolute top-0 left-0 h-full w-full bg-[radial-gradient(circle_at_80%_70%,rgba(31,81,50,0.08),transparent_40%)]"/>
@@ -137,7 +137,7 @@ export default function Hero() {
             <div className="absolute hidden lg:block h-[350px] w-[350px] rounded-full border border-white/40"></div>
 
             {/* Glow */}
-            <div className="absolute h-[420px] w-[420px] bg-[#D4AF37]/20 blur-[140px] rounded-full" />
+            <div className="absolute h-[380px] w-[380px] bg-[#D4AF37]/18 blur-[100px] rounded-full" />
 
             {/* Cinematic Spotlight */}
            <div
@@ -151,7 +151,7 @@ export default function Hero() {
            <div className="absolute bottom-[-30px] left-1/2 -translate-x-1/2 h-20 w-[380px] rounded-full bg-black/15 blur-3xl"/> 
             <div className="absolute h-[350px] w-[350px] rounded-[50px] bg-black/5 blur-3xl translate-y-14 scale-95"></div>
             {/* Product */}
-            <div className="absolute h-[380px] w-[380px] rounded-full bg-[#D4AF37]/15 blur-[120px] animate-pulse"/>
+            <div className="absolute h-[340px] w-[340px] rounded-full bg-[#D4AF37]/15 blur-[90px]"/>
             {/* Product Card */}
             <div className="group relative z-20 w-[280px] xs:w-[310px] sm:w-[380px] md:w-[430px] lg:w-[470px] xl:w-[500px] rounded-[42px] border border-white/60 bg-white/70 p-5 backdrop-blur-3xl shadow-[0_45px_120px_rgba(0,0,0,0.18)] transition-all duration-700 hover:-translate-y-2">
               {/* Glass Reflection */}

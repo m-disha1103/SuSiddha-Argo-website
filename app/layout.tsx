@@ -58,7 +58,6 @@ export const metadata: Metadata = {
   applicationName: "SuSiddha Agro Products",
 
   category: "Food",
-  themeColor: "#1F5132",
 
   robots: {
     index: true,
@@ -170,21 +169,31 @@ const schemaData = {
     {
       "@type": "Product",
       name: "Premium Unpolished Sona Masuri Rice",
+      image:
+        "https://su-siddha-argo-website.vercel.app/images/og-banner.png",
+      description:
+        "Premium naturally processed unpolished Sona Masuri Rice rich in nutrition, fiber and authentic taste.",
+      category: "Rice",
+      countryOfOrigin: "India",
+      sku: "SS-SPR-001",
+      material: "Unpolished Sona Masuri Rice",
       brand: {
         "@type": "Brand",
         name: "SuSiddha",
       },
-      category: "Rice",
-      countryOfOrigin: "India",
-      description:
-        "Premium naturally processed unpolished Sona Masuri rice rich in nutrition, fiber and authentic taste.",
       manufacturer: {
         "@id":
           "https://su-siddha-argo-website.vercel.app/#organization",
       },
-    },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceCurrency: "INR",
+      },
+    }
   ],
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -1,30 +1,55 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function CursorGlow() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const glow = glowRef.current;
+
+    if (!glow) return;
+
+    let raf = 0;
+
     const move = (e: MouseEvent) => {
-      setPosition({
-        x: e.clientX,
-        y: e.clientY,
+      cancelAnimationFrame(raf);
+
+      raf = requestAnimationFrame(() => {
+        glow.style.transform = `translate3d(${e.clientX - 110}px, ${
+          e.clientY - 110
+        }px, 0)`;
       });
     };
 
-    window.addEventListener("mousemove", move);
+    window.addEventListener("mousemove", move, {
+      passive: true,
+    });
 
-    return () => window.removeEventListener("mousemove", move);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("mousemove", move);
+    };
   }, []);
 
   return (
     <div
-      className="pointer-events-none fixed z-[1] hidden lg:block h-[260px] w-[260px] rounded-full bg-[#D4AF37]/10 blur-[90px] transition-all duration-300"
-      style={{
-        left: position.x - 130,
-        top: position.y - 130,
-      }}
+      ref={glowRef}
+      className="
+        pointer-events-none
+        fixed
+        left-0
+        top-0
+        z-[1]
+        hidden
+        xl:block
+        h-[220px]
+        w-[220px]
+        rounded-full
+        bg-[#D4AF37]/8
+        blur-[70px]
+        will-change-transform
+      "
     />
   );
 }
