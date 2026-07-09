@@ -92,7 +92,7 @@ export const metadata: Metadata = {
 
   images: [
     {
-      url: "/images/og-banner.jpg",
+      url: "/images/og-banner.png",
       width: 1200,
       height: 630,
       alt: "SuSiddha Agro Products - Premium Unpolished Sona Masuri Rice",
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
     description:
       "Premium naturally processed unpolished Sona Masuri rice.",
 
-    images: ["/images/og-banner.jpg"],
+    images: ["/images/og-banner.png"],
   },
 
   alternates: {

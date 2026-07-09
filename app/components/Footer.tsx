@@ -23,7 +23,7 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 sm:py-20">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-[1fr_0.8fr_1.25fr_1fr]">
           {/* Logo */}
           <div>
             <div className="flex items-center justify-center gap-4 sm:justify-start">
@@ -105,7 +105,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="xl:col-span-1 min-w-[340px]">
             <h3 className="text-center text-2xl font-bold md:text-left">
               Contact
             </h3>
@@ -115,26 +115,26 @@ export default function Footer() {
             <div className="mt-8 space-y-5">
               <a
                 href="tel:+918953565330"
-                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition duration-500 hover:border-[#D4AF37]/30 hover:bg-white/10"
+                className="group flex w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl transition duration-500 hover:border-[#D4AF37]/30 hover:bg-white/10"
               >
                 <div className="rounded-xl bg-[#D4AF37] p-3 text-[#123524]">
                   <Phone size={20} />
                 </div>
 
-                <span className="break-all text-sm text-white/80 sm:text-base group-hover:text-white">
+                <span className="flex-1 break-words text-sm text-white/80 sm:text-base group-hover:text-white">
                   +91 89535 65330
                 </span>
               </a>
 
               <a
                 href="mailto:susiddhaagro@gmail.com"
-                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition duration-500 hover:border-[#D4AF37]/30 hover:bg-white/10"
+                className="group flex w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl transition duration-500 hover:border-[#D4AF37]/30 hover:bg-white/10"
               >
                 <div className="rounded-xl bg-[#D4AF37] p-3 text-[#123524]">
                   <Mail size={20} />
                 </div>
 
-                <span className="break-all text-sm text-white/80 sm:text-base group-hover:text-white">
+                <span className="flex-1 break-words text-sm text-white/80 sm:text-base group-hover:text-white">
                   susiddhaagro@gmail.com
                 </span>
               </a>

@@ -48,7 +48,7 @@ export default function ProductSection() {
                     }}
                 />
                 <Image
-                    src="/images/product.png"
+                    src="/images/product.jpeg"
                     alt="SuSiddha Premium Rice"
                     width={700}
                     height={700}
