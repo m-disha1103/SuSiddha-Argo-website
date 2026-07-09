@@ -3,11 +3,11 @@ export default function FarmToFamily() {
   return (
     <>
     {/* Farm To Family Section */}
-      <section className="relative overflow-hidden py-28 bg-gradient-to-br from-[#FFFDF7] via-[#F8F4E8] to-[#EDE3C8]">
+      <section className="relative overflow-hidden py-24 lg:py-28 bg-gradient-to-br from-[#FFFDF7] via-[#F8F4E8] to-[#EDE3C8]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -left-24 top-0 h-96 w-96 rounded-full bg-[#1F5132]/10 blur-3xl"></div>
+          <div className="absolute -left-24 top-0 h-96 w-96 rounded-full bg-[#1F5132]/10 blur-[110px]"></div>
 
-          <div className="absolute right-0 bottom-0 h-[500px] w-[500px] rounded-full bg-[#B8860B]/10 blur-3xl"></div>
+          <div className="absolute right-0 bottom-0 h-[500px] w-[500px] rounded-full bg-[#B8860B]/10 blur-[110px]"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -28,13 +28,16 @@ export default function FarmToFamily() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {/* Seed Selection */}
-            <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
+            <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
               <Image
                 src="/images/seed.jpeg"
-                alt="Unpolished Sona Masuri Rice"
+                alt="Premium seed selection for SuSiddha rice"
                 width={900}
                 height={600}
-                className="h-64 w-full object-cover transition duration-700 group-hover:scale-110"
+                loading="lazy"
+                quality={90}
+                sizes="(max-width:768px)100vw,(max-width:1024px)50vw,25vw"
+                className="h-64 w-full object-cover transition duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1F5132]/60 via-transparent to-transparent"></div>
 
@@ -51,13 +54,16 @@ export default function FarmToFamily() {
             </div>
 
             {/* Cultivation */}
-            <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
+            <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
               <Image
-                src="/images/cultivation.jpeg"
-                alt="Unpolished Sona Masuri Rice"
+                src="/images/sona-masuri-rice.jpg"
+                alt="Natural processing of SuSiddha rice"
                 width={900}
                 height={600}
-                className="h-64 w-full object-cover transition duration-700 group-hover:scale-110"
+                loading="lazy"
+                quality={90}
+                sizes="(max-width:768px)100vw,(max-width:1024px)50vw,25vw"
+                className="h-64 w-full object-cover transition duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1F5132]/60 via-transparent to-transparent"></div>
 
@@ -74,13 +80,16 @@ export default function FarmToFamily() {
             </div>
 
             {/* Processing */}
-            <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
+            <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
               <Image
                 src="/images/sona-masuri-rice.jpg"
-                alt="Unpolished Sona Masuri Rice"
+                alt="Natural processing of SuSiddha rice"
                 width={900}
                 height={600}
-                className="h-64 w-full object-cover transition duration-700 group-hover:scale-110"
+                loading="lazy"
+                quality={90}
+                sizes="(max-width:768px)100vw,(max-width:1024px)50vw,25vw"
+                className="h-64 w-full object-cover transition duration-700 group-hover:scale-105"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#1F5132]/60 via-transparent to-transparent" />
@@ -98,11 +107,16 @@ export default function FarmToFamily() {
             </div>
 
             {/* Family Table */}
-            <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
-              <img
-                src="https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=800&q=80"
-                alt="Family Dining"
-                className="h-64 w-full object-cover transition duration-700 group-hover:scale-110"
+            <div className="group relative overflow-hidden rounded-[30px] border border-white/60 bg-white/80 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(31,81,50,0.20)]">
+              <Image
+                src="/images/family-table.jpg"
+                alt="Healthy family enjoying SuSiddha Premium Rice"
+                width={900}
+                height={600}
+                loading="lazy"
+                quality={90}
+                sizes="(max-width:768px)100vw,(max-width:1024px)50vw,25vw"
+                className="h-64 w-full object-cover transition duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1F5132]/60 via-transparent to-transparent"></div>
 

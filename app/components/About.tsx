@@ -9,11 +9,11 @@ export default function About() {
         id="about"
         className="relative overflow-hidden bg-gradient-to-br from-[#F8F4E8] via-[#FCFAF4] to-[#FFF9EC] py-20 sm:py-24 md:py-28 lg:py-36"
       >
-        <div className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-multiply bg-[url('/images/rice-grain.png')]" />
+        <div className="pointer-events-none absolute inset-0 hidden md:block opacity-[0.035] mix-blend-multiply bg-[url('/images/rice-grain.png')]" />
         {/* Background Glow */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -left-32 top-24 h-[500px] w-[500px] rounded-full bg-[#18442D]/8 blur-[140px]" />
-          <div className="absolute right-[-120px] bottom-[-100px] h-[520px] w-[520px] rounded-full bg-[#D4AF37]/12 blur-[170px]" />
+          <div className="absolute -left-32 top-24 h-[500px] w-[500px] rounded-full bg-[#18442D]/8 blur-[110px]" />
+          <div className="absolute right-[-120px] bottom-[-100px] h-[520px] w-[520px] rounded-full bg-[#D4AF37]/12 blur-[120px]" />
           <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#D4AF37]/10 to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
@@ -25,13 +25,16 @@ export default function About() {
 
               {/* Glow */}
               <div className="absolute -left-10 top-10 h-[350px] w-[350px] rounded-full bg-[#B8860B]/15 blur-[100px]" />
-              <div className="group relative overflow-hidden rounded-[42px] border border-white/60 bg-white/70 p-4 backdrop-blur-3xl shadow-[0_45px_120px_rgba(0,0,0,0.18)] transition-all duration-700 hover:-translate-y-3">
+              <div className="group relative overflow-hidden rounded-[42px] border border-white/60 bg-white/70 p-4 backdrop-blur-2xl shadow-[0_45px_120px_rgba(0,0,0,0.18)] transition-all duration-700 hover:-translate-y-2">
                 <Image
                   src="/images/about-rice.png"
-                  alt="SuSiddha Farm"
+                  alt="SuSiddha Agro Products Premium Unpolished Sona Masuri Rice"
                   width={900}
                   height={900}
-                  className="h-[340px] sm:h-[430px] md:h-[560px] lg:h-[620px] w-full rounded-[30px] object-cover transition-all duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  quality={90}
+                  sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 900px"
+                  className="h-[340px] sm:h-[430px] md:h-[560px] lg:h-[620px] w-full rounded-[30px] object-cover transition-all duration-700 group-hover:scale-[1.03]"
                 />
               </div>
               <div
@@ -43,7 +46,7 @@ export default function About() {
               ></div>
 
               {/* Floating Card */}
-              <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:bottom-6 sm:left-6 md:-bottom-10 md:left-8 rounded-[24px] border border-white/60 bg-white/80 backdrop-blur-3xl px-5 py-4 sm:px-6 sm:py-5 shadow-[0_30px_80px_rgba(0,0,0,.15)]">
+              <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:bottom-6 sm:left-6 md:-bottom-10 md:left-8 rounded-[24px] border border-white/60 bg-white/80 backdrop-blur-xl px-5 py-4 sm:px-6 sm:py-5 shadow-[0_30px_80px_rgba(0,0,0,.15)]">
                 <p className="text-sm font-semibold uppercase tracking-widest text-[#B8860B]">
                   Trusted Quality
                 </p>
@@ -73,12 +76,10 @@ export default function About() {
               </h2>
 
               <p className="mt-8 text-base md:text-lg leading-7 md:leading-8 text-gray-600">
-                At Susiddha Agro, We celebrate the essence of authentic
-                flavors with our unpolished Sona Masuri Rice, 
-                meticulously sourced from traditional farmers commited to
-                sustainable practices, Packed with essential nutritients, 
-                our unpolished Sona Masuri Rice Is a wholesome
-                addition to your meals.
+                At SuSiddha Agro Products, we celebrate authentic Indian farming 
+                traditions through our premium unpolished Sona Masuri rice.
+                Carefully sourced from trusted farmers using sustainable cultivation practices,
+                every grain retains its natural bran layer, essential nutrients, rich aroma, and wholesome taste.
               </p>
               <p className="mt-7 text-base sm:text-lg leading-7 sm:leading-9 text-gray-600">
                 Our premium unpolished Sona Masuri rice is sourced directly 

@@ -21,11 +21,24 @@ const testimonials = [
     review:
       "Healthy, nutritious and delicious. The unpolished rice cooks perfectly and retains its authentic flavour.",
   },
+  {
+    name: "Ashish Singh",
+    location: "Ahmedabad",
+    review:
+      "The rice is soft, fragrant, and cooks evenly. We love the wholesome quality for our family meals.",
+  },
+  {
+    name: "Arun Srivatav",
+    location: "Banglore",
+    review:
+      "Great quality rice and lovely taste."
+  }
 ];
 
 export default function Testimonials() {
   return (
     <section
+      aria-labelledby="testimonial-heading"
       id="testimonials"
       className="relative overflow-hidden bg-gradient-to-br from-[#FFFDF8] via-[#FAF7EF] to-[#F5EACA] py-28"
     >
@@ -46,7 +59,10 @@ export default function Testimonials() {
               <div className="h-px w-16 bg-[#D4AF37]" />
             </div>
 
-            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1F5132]">
+            <h2
+              id="testimonial-heading"
+              className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1F5132]"
+            >
               Trusted By Families
               <span className="block text-[#B8860B]">
                 Across India
@@ -64,16 +80,22 @@ export default function Testimonials() {
         <div className="mt-20 grid gap-8 lg:grid-cols-3">
           {testimonials.map((item, index) => (
             <FadeIn key={item.name} delay={index * 0.15}>
-              <div className="group relative overflow-hidden rounded-[32px] border border-white/50 bg-white/70 p-8 backdrop-blur-xl shadow-[0_20px_60px_rgba(31,81,50,0.10)] transition-all duration-500 hover:-translate-y-3 hover:border-[#D4AF37]/40 hover:shadow-[0_30px_80px_rgba(31,81,50,0.18)]">
+              <div className="group relative overflow-hidden rounded-[32px] border border-white/50 bg-white/70 p-8 backdrop-blur-xl shadow-[0_20px_60px_rgba(31,81,50,0.10)] transition-all duration-500 hover:-translate-y-2 hover:border-[#D4AF37]/40 hover:shadow-[0_35px_90px_rgba(31,81,50,0.14)]">
 
                 {/* Gold Reflection */}
                 <div className="absolute -left-20 top-0 h-full w-20 rotate-12 bg-white/30 blur-2xl transition-all duration-1000 group-hover:left-[120%]" />
 
-                <div className="flex text-xl text-[#D4AF37]">
+                <div
+                  className="flex text-xl text-[#D4AF37]"
+                  aria-label="5 star rating"
+                >
+                  <div className="mb-6 text-6xl font-serif leading-none text-[#D4AF37]/20">
+                    “
+                  </div>
                   ★★★★★
                 </div>
 
-                <p className="mt-6 leading-8 text-gray-600 italic">
+                <p className="mt-6 leading-8 text-gray-600 italic text-[17px]">
                   "{item.review}"
                 </p>
 

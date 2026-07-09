@@ -4,12 +4,13 @@ import FadeIn from "./FadeIn";
 export default function Benefits() {
   return (
     <section
+      aria-labelledby="benefits-heading"
       id="benefits"
       className="relative overflow-hidden bg-gradient-to-br from-[#FFFDF8] via-[#FAF6EC] to-[#F5E9C8] py-20 sm:py-24 lg:py-28"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -left-40 top-10 h-[480px] w-[480px] rounded-full bg-[#1F5132]/10 blur-[140px]" />
+        <div className="absolute -left-40 top-10 h-[480px] w-[480px] rounded-full bg-[#1F5132]/10 blur-[120px]" />
         <div className="absolute right-0 bottom-0 h-[520px] w-[520px] rounded-full bg-[#D4AF37]/10 blur-[160px]" />
       </div>
 
@@ -21,8 +22,11 @@ export default function Benefits() {
               <Image
                 src="/images/wheat-left.png"
                 alt=""
+                aria-hidden="true"
                 width={320}
                 height={320}
+                loading="lazy"
+                quality={85}
                 className="pointer-events-none absolute -left-20 top-0 h-[320px] opacity-10"
               />
 
@@ -35,7 +39,8 @@ export default function Benefits() {
                 <div className="h-px w-16 bg-[#D4AF37]" />
               </div>
 
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] sm:leading-tight text-[#1F5132]">
+              <h2 id="benefits-heading"
+              className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] sm:leading-tight text-[#1F5132]">
                 Why Choose
                 <br />
                 <span className="bg-gradient-to-r from-[#B8860B] to-[#D4AF37] bg-clip-text text-transparent">
@@ -44,10 +49,10 @@ export default function Benefits() {
               </h2>
 
               <p className="mt-7 max-w-xl text-base sm:text-lg leading-7 sm:leading-9 text-gray-600">
-                Every grain of SuSiddha Unpolished Sona Masuri Rice retains its
-                natural bran layer, preserving fiber, vitamins and minerals
-                while delivering authentic taste, aroma and wholesome nutrition
-                for your family.
+                Every grain of SuSiddha Premium Unpolished Sona Masuri Rice 
+                retains its natural bran layer, preserving fibre, vitamins and 
+                essential minerals while delivering authentic aroma, 
+                traditional taste and wholesome nutrition for your family.
               </p>
 
               {/* Benefit Cards */}
@@ -72,7 +77,7 @@ export default function Benefits() {
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="group flex items-start gap-4 sm:gap-5 rounded-[28px] border border-white/60 bg-white/65 p-5 sm:p-6 backdrop-blur-xl shadow-[0_15px_45px_rgba(31,81,50,0.08)] transition-all duration-500 hover:-translate-y-2 hover:border-[#D4AF37]/40 hover:bg-white/80 hover:shadow-[0_25px_60px_rgba(31,81,50,0.16)]"
+                    className="group flex items-start gap-4 sm:gap-5 rounded-[28px] border border-white/60 bg-white/65 p-5 sm:p-6 backdrop-blur-xl shadow-[0_15px_45px_rgba(31,81,50,0.08)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#D4AF37]/40 hover:bg-white/80 hover:shadow-[0_25px_60px_rgba(31,81,50,0.16)]"
                   >
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#1F5132] to-[#2E6E46] text-lg font-bold text-white shadow-lg transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                       ✓
@@ -93,19 +98,19 @@ export default function Benefits() {
 
               {/* Stats */}
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(31,81,50,.15)]">
                   <h3 className="text-3xl font-bold text-[#1F5132]">100%</h3>
                   <p className="mt-2 text-sm text-gray-600">Natural</p>
                 </div>
 
-                <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(31,81,50,.15)]">
                   <h3 className="text-3xl font-bold text-[#1F5132]">
                     Low GI
                   </h3>
                   <p className="mt-2 text-sm text-gray-600">Healthy</p>
                 </div>
 
-                <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(31,81,50,.15)]">
                   <h3 className="text-3xl font-bold text-[#1F5132]">Fiber</h3>
                   <p className="mt-2 text-sm text-gray-600">Rich</p>
                 </div>
@@ -118,12 +123,15 @@ export default function Benefits() {
             <div className="relative flex items-center justify-center mt-10 lg:mt-0">
 
               {/* Background Glow */}
-              <div className="absolute h-[560px] w-[560px] rounded-full bg-[#D4AF37]/20 blur-[140px]" />
+              <div className="absolute h-[560px] w-[560px] rounded-full bg-[#D4AF37]/20 blur-[120px]" />
 
               {/* Decorative Wheat */}
               <Image
                 src="/images/wheat-right.png"
                 alt=""
+                aria-hidden="true"
+                loading="lazy"
+                quality={85}
                 width={180}
                 height={180}
                 className="absolute -left-12 top-10 hidden sm:block w-32 opacity-60 rotate-[-18deg] pointer-events-none"
@@ -131,6 +139,9 @@ export default function Benefits() {
               <Image
                 src="/images/wheat-left.png"
                 alt=""
+                aria-hidden="true"
+                loading="lazy"
+                quality={85}
                 width={158}
                 height={158}
                 className="absolute right-[-20px] bottom-8 w-32 opacity-50 rotate-[160deg] pointer-events-none"
@@ -153,11 +164,14 @@ export default function Benefits() {
 
                       <Image
                         src="/images/rice-field.png"
-                        alt="Rice Field"
+                        alt="Healthy unpolished Sona Masuri rice field"
                         width={650}
                         height={760}
-                        className="object-cover transition duration-700 hover:scale-110"
-                              />
+                        loading="lazy"
+                        quality={90}
+                        sizes="(max-width:768px)100vw,(max-width:1024px)50vw,45vw"
+                        className="object-cover transition-all duration-500 hover:scale-105"
+                      />
                     </div>
                   </div>
                 </div>
