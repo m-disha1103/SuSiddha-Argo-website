@@ -5,10 +5,10 @@ import Hero from "./components/Hero";
 
 const BrandPromise = dynamic(() => import("./components/BrandPromise"));
 const FarmToFamily = dynamic(() => import("./components/FarmToFamily"));
+const About = dynamic(() => import("./components/About"));
 const ProductSection = dynamic(() => import("./components/ProductSection"));
 const Benefits = dynamic(() => import("./components/Benefits"));
 const CinematicBanner = dynamic(() => import("./components/CinematicBanner"));
-const About = dynamic(() => import("./components/About"));
 const Testimonials = dynamic(() => import("./components/Testimonials"));
 const Quality = dynamic(() => import("./components/Quality"));
 const FAQ = dynamic(() => import("./components/FAQ"));
@@ -36,6 +36,10 @@ export default function Home() {
       </ScrollFade>
 
       <ScrollFade>
+        <About />
+      </ScrollFade>
+
+      <ScrollFade>
         <ProductSection />
       </ScrollFade>
       
@@ -45,10 +49,6 @@ export default function Home() {
 
       <ScrollFade>
         <CinematicBanner />
-      </ScrollFade>
-
-      <ScrollFade>
-        <About />
       </ScrollFade>
 
       <ScrollFade>
