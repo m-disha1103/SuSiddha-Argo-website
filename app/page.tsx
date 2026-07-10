@@ -25,15 +25,8 @@ export default function Home() {
   return (
     <main className="relative overflow-x-hidden bg-gradient-to-b from-[#FFFDF7] via-[#F8F4E8] to-[#F3E6C4]">
       <Navbar />
-      {/* Hero should appear immediately */}
-      <Hero />
-      <ScrollFade>
-        <BrandPromise />
-      </ScrollFade>
 
-      <ScrollFade>
-        <FarmToFamily />
-      </ScrollFade>
+      <Hero />
 
       <ScrollFade>
         <About />
@@ -42,9 +35,17 @@ export default function Home() {
       <ScrollFade>
         <ProductSection />
       </ScrollFade>
-      
+
       <ScrollFade>
         <Benefits />
+      </ScrollFade>
+
+      <ScrollFade>
+        <FarmToFamily />
+      </ScrollFade>
+
+      <ScrollFade>
+        <BrandPromise />
       </ScrollFade>
 
       <ScrollFade>
