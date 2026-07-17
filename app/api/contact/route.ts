@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     }
 
     const { error } = await resend.emails.send({
-      from: "SuSiddha Website <onboarding@resend.dev>",
+      from: "SuSiddha Website <contact@susiddhaagro.com>",
 
       // 👇 CHANGE THIS TO YOUR EMAIL
       to: ["susiddhaagro@gmail.com"],
