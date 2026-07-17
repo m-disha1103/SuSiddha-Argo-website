@@ -105,7 +105,7 @@ export default function Benefits() {
                   <h3 className="text-3xl font-bold text-[#1F5132]">
                     Lower GI
                   </h3>
-                  <p className="mt-2 text-sm text-gray-600">Compared to Poloshed Rice</p>
+                  <p className="mt-2 text-sm text-gray-600">Compared to Polished Rice</p>
                 </div>
 
                 <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(31,81,50,.15)]">

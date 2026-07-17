@@ -11,23 +11,23 @@ import FadeIn from "./FadeIn";
 const features = [
   {
     icon: ShieldCheck,
-    title: "Premium Quality",
-    desc: "Every batch is carefully processed to maintain consistent quality, purity and freshness.",
-  },
-  {
-    icon: Leaf,
-    title: "100% Natural",
-    desc: "Naturally processed without unnecessary polishing to retain essential nutrients.",
+    title: "Cleaning & Sorting",
+    desc: "Raw paddy is cleaned and sorted to remove unwanted particles before processing.",
   },
   {
     icon: Wheat,
-    title: "Farm Fresh",
-    desc: "Directly sourced from trusted farms using traditional cultivation practices.",
+    title: "Controlled Milling",
+    desc: "Milling is carried out carefully to retain the characteristic properties of unpolished rice.",
+  },
+  {
+    icon: Leaf,
+    title: "Hygienic Packaging",
+    desc: "Finished rice is packed in clean, food-grade packaging to help maintain freshness during storage and transport.",
   },
   {
     icon: Award,
-    title: "Trusted Brand",
-    desc: "Committed to delivering authentic taste, nutrition and customer satisfaction.",
+    title: "Batch Inspection",
+    desc: "Each production batch is inspected for consistency before being released for distribution.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function Quality() {
             <div className="flex items-center justify-center gap-4">
               <div className="h-px w-16 bg-[#D4AF37]" />
               <p className="uppercase tracking-[5px] font-semibold text-[#B8860B]">
-                Why Trust SuSiddha
+                Quality Assurance
               </p>
               <div className="h-px w-16 bg-[#D4AF37]" />
             </div>
@@ -59,17 +59,15 @@ export default function Quality() {
               id="quality-heading"
               className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1F5132]"
             >
-              Quality You Can
+              Maintaining
               <span className="block text-[#B8860B]">
-                Trust Every Day
+                consistent Standards
               </span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600">
-              We believe every grain should reflect purity, nutrition and
-              authenticity. From carefully selected farms to hygienic
-              processing, every step is focused on delivering premium quality
-              rice for your family.
+              Every production batch follows a systematic workflow including cleaning, grading, controlled milling, hygienic packaging and inspection. 
+              Our focus is to deliver consistent product quality from procurement through dispatch.
             </p>
             <div className="mx-auto mt-10 flex max-w-xs items-center gap-4">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
@@ -111,13 +109,12 @@ export default function Quality() {
               <div className="h-px w-20 bg-[#D4AF37]" />
             </div>
             <h3 className="text-3xl font-bold">
-              Premium Rice. Pure Nutrition. Trusted Quality.
+              Committed To Consistency At Every Stage
             </h3>
 
             <p className="mx-auto mt-4 max-w-3xl text-white/90 leading-8">
-              Every grain of SuSiddha Unpolished Sona Masuri Rice is selected
-              with care to bring healthy, wholesome and delicious meals to your
-              table.
+              From sourcing and processing to packaging and distribution, 
+              every stage is managed with attention to consistency, hygiene and product integrity.
             </p>
           </div>
         </FadeIn>

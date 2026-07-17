@@ -27,23 +27,17 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Experience the purity of SuSiddha Agro Products. Premium unpolished Sona Masuri rice, naturally processed to preserve nutrition, authentic aroma and traditional taste.",
+    "SuSiddha Agro Products manufactures premium unpolished Sona Masuri rice, carefully processed to preserve the bran layer, authentic taste and consistent cooking quality.",
 
   keywords: [
-    "SuSiddha",
-    "SuSiddha Agro Products",
-    "Sona Masuri Rice",
-    "Premium Rice",
-    "Unpolished Rice",
-    "Healthy Rice",
-    "Natural Rice",
-    "Indian Rice",
-    "Rice Manufacturer",
-    "Rice Supplier",
-    "Rice Exporter",
-    "Fiber Rich Rice",
-    "Traditional Rice",
-  ],
+  "SuSiddha Agro Products",
+  "Unpolished Sona Masuri Rice",
+  "Sona Masuri Rice",
+  "Rice Manufacturer India",
+  "Rice Supplier",
+  "Premium Rice",
+  "Rice Processing",
+],
 
   authors: [
     {
@@ -87,7 +81,7 @@ export const metadata: Metadata = {
   title: "SuSiddha Agro Products | Premium Unpolished Sona Masuri Rice",
 
   description:
-    "Premium naturally processed unpolished Sona Masuri rice with authentic taste, rich nutrition and farm-fresh quality.",
+  "Unpolished Sona Masuri rice with retained bran layer, soft texture and light aroma, suitable for everyday cooking.",
 
   images: [
     {
