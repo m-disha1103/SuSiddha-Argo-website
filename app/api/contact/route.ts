@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       from: "SuSiddha Website <onboarding@resend.dev>",
 
       // 👇 CHANGE THIS TO YOUR EMAIL
-      to: ["disham492@gmail.com"],
+      to: ["susiddhaagro@gmail.com"],
 
       subject: `New Enquiry from ${name}`,
 
