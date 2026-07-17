@@ -49,30 +49,28 @@ export default function Benefits() {
               </h2>
 
               <p className="mt-7 max-w-xl text-base sm:text-lg leading-7 sm:leading-9 text-gray-600">
-                Every grain of SuSiddha Premium Unpolished Sona Masuri Rice 
-                retains its natural bran layer, preserving fibre, vitamins and 
-                essential minerals while delivering authentic aroma, 
-                traditional taste and wholesome nutrition for your family.
+                Unpolished Sona Masuri Rice retains the outer bran layer, providing dietary fibre along with naturally occurring vitamins and minerals. 
+                   These nutritional characteristics make it a suitable choice for balanced everyday meals.
               </p>
 
               {/* Benefit Cards */}
               <div className="mt-10 space-y-5">
                 {[
                   {
-                    title: "Rich in Fiber",
-                    text: "Supports healthy digestion and everyday wellness.",
+                    title: "Retains Bran Layer",
+                    text: "The outer bran layer remains intact after milling, preserving naturally occurring nutrients.",
+                  }               ,
+                  {
+                    title: "Dietary Fibre",
+                    text: "Provides dietary fibre that supports normal digestion as part of a balanced diet.",
                   },
                   {
-                    title: "Low Glycemic Index",
-                    text: "Helps maintain balanced nutrition and healthy living.",
+                    title: "Lower Glycemic Index",
+                    text: "Generally has a lower glycemic index than polished white rice.",
                   },
                   {
-                    title: "Naturally Nutritious",
-                    text: "Retains essential vitamins and minerals naturally.",
-                  },
-                  {
-                    title: "Authentic Taste",
-                    text: "Traditional aroma and wholesome flavour in every meal.",
+                    title: "Naturally Occurring Micronutrients",
+                    text: "Contains vitamins and minerals naturally present in the grain.",
                   },
                 ].map((item) => (
                   <div
@@ -99,20 +97,20 @@ export default function Benefits() {
               {/* Stats */}
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(31,81,50,.15)]">
-                  <h3 className="text-3xl font-bold text-[#1F5132]">100%</h3>
-                  <p className="mt-2 text-sm text-gray-600">Natural</p>
+                  <h3 className="text-3xl font-bold text-[#1F5132]">Bran</h3>
+                  <p className="mt-2 text-sm text-gray-600">Retained</p>
                 </div>
 
                 <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(31,81,50,.15)]">
                   <h3 className="text-3xl font-bold text-[#1F5132]">
-                    Low GI
+                    Lower GI
                   </h3>
-                  <p className="mt-2 text-sm text-gray-600">Healthy</p>
+                  <p className="mt-2 text-sm text-gray-600">Compared to Poloshed Rice</p>
                 </div>
 
                 <div className="rounded-[24px] border border-[#D4AF37]/20 bg-white/70 p-6 text-center backdrop-blur-xl shadow-xl transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(31,81,50,.15)]">
-                  <h3 className="text-3xl font-bold text-[#1F5132]">Fiber</h3>
-                  <p className="mt-2 text-sm text-gray-600">Rich</p>
+                  <h3 className="text-3xl font-bold text-[#1F5132]">Dietary</h3>
+                  <p className="mt-2 text-sm text-gray-600">Fibre</p>
                 </div>
               </div>
             </div>
@@ -182,30 +180,30 @@ export default function Benefits() {
                 {/* Premium Badge */}
                 <div className="absolute bottom-4 left-4 sm:-bottom-8 sm:-left-8 rounded-full border-4 border-white bg-gradient-to-br from-[#1F5132] to-[#2F7A4A] h-20 w-20 sm:h-32 sm:w-32 shadow-2xl flex flex-col justify-center items-center text-center">
                   <span className="text-white text-xs tracking-[3px] uppercase">
-                    100%
+                    Bran
                   </span>
                   <span className="text-[#F8E8B0] text-lg sm:text-2xl font-bold leading-none">
-                    Natural
+                    Layer
                   </span>
                 </div>
 
                 {/* Floating Card */}
                 <div className="hidden sm:block absolute -right-10 top-12 rounded-3xl bg-white/90 backdrop-blur-xl border border-[#D4AF37]/30 px-6 py-5 shadow-2xl">
                   <p className="uppercase tracking-[3px] text-xs text-[#B8860B] font-semibold">
-                    Premium Quality
+                    Daily Nutrition
                   </p>
                   <h3 className="mt-1 text-2xl font-bold text-[#1F5132]">
-                    Farm Fresh
+                    Balanced Meals
                   </h3>
                 </div>
 
                 {/* Bottom Card */}
                 <div className="hidden sm:block absolute right-0 -bottom-10 rounded-[28px] border border-[#D4AF37]/25 bg-white/95 backdrop-blur-xl px-7 py-5 shadow-[0_20px_50px_rgba(0,0,0,.12)]">
                   <p className="uppercase tracking-[3px] text-xs text-[#B8860B] font-semibold">
-                    Rich Nutrition
+                    Whole Grain
                   </p>
                   <h3 className="text-2xl font-bold text-[#1F5132] mt-1">
-                    Unpolished Rice
+                    Sona Masuri
                   </h3>
                   <div className="mt-3 h-[2px] w-20 bg-gradient-to-r from-[#D4AF37] to-transparent" />
                 </div>

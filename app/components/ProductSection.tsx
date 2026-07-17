@@ -18,7 +18,7 @@ export default function ProductSection() {
         {/* Heading */}
         <div className="mb-16 sm:mb-20 text-center">
           <p className="uppercase tracking-[4px] font-semibold text-[#B8860B]">
-            Premium Collection
+            Product Overview
           </p>
 
           <h2 className="mt-3 text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F5132]">
@@ -27,8 +27,8 @@ export default function ProductSection() {
             Sona Masuri Rice
           </h2>
           <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-gray-600">
-            Carefully processed using traditional methods to preserve nutrition,
-            taste, aroma and the natural goodness of every grain.
+            A medium-grain variety known for its soft texture, delicate aroma and versatility. 
+            Suitable for everyday meals including steamed rice, pulao and traditional Indian recipes.
           </p>
         </div>
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
@@ -64,10 +64,10 @@ export default function ProductSection() {
             {/*premium badge*/}
                 <div className="absolute top-4 right-4 sm:-top-5 sm:right-0 rounded-full border border-white/50 bg-white/80 backdrop-blur-xl px-4 sm:px-6 py-2.5 sm:py-3 shadow-2xl z-20">
                 <p className="text-[10px] uppercase tracking-[0.35em] text-[#B8860B]">
-                Premium
+                Product
                 </p>
                 <h4 className="mt-1 font-bold text-[#18442D]">
-                100% Natural
+                Medium Grain
                 </h4>
                 </div>
             </div>
@@ -79,7 +79,7 @@ export default function ProductSection() {
               <div className="inline-flex items-center gap-2 rounded-full bg-[#FFF7E8] px-5 py-2 border border-[#B8860B]/20 shadow">
                 <span className="h-2.5 w-2.5 rounded-full  bg-gradient-to-r from-[#18442D] to-[#2F6B49] shadow-[0_20px_45px_rgba(24,68,45,.25)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(24,68,45,.35)]" />
                 <span className="text-sm font-semibold tracking-wide text-[#B8860B]">
-                  PREMIUM QUALITY
+                  PRODUCT DETAILS
                 </span>
               </div>
               <h2 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-[1.1] text-[#1F5132]">
@@ -88,10 +88,9 @@ export default function ProductSection() {
                 Sona Masuri Rice
               </h2>
               <p className="mt-7 text-base sm:text-lg leading-7 sm:leading-9 text-gray-600">
-                Crafted using traditional processing methods to preserve the
-                natural bran layer, fibre, vitamins and authentic aroma. Every
-                grain delivers purity, nutrition and wholesome taste for your
-                family.
+                SuSiddha Unpolished Sona Masuri Rice is carefully milled to retain the bran layer 
+                while maintaining its characteristic soft texture after cooking. Its light fragrance and non-sticky 
+                nature make it suitable for daily household use as well as a wide range of Indian dishes.
               </p>
               <div className="my-12 flex items-center gap-4">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"/>
@@ -102,11 +101,11 @@ export default function ProductSection() {
               {/* Features */}
               <div className="space-y-5">
                 {[
-                  "Naturally Unpolished",
-                  "Rich in Fiber & Nutrients",
-                  "Low Glycemic Index",
-                  "Farm Fresh Quality",
-                ].map((item) => (
+                    "Medium Grain Variety",
+                    "Soft Texture After Cooking",
+                    "Light Natural Aroma",
+                    "Suitable for Daily Indian Meals",
+                  ].map((item) => (
                   <div
                     key={item}
                     className="flex items-start gap-4"
@@ -141,26 +140,26 @@ export default function ProductSection() {
               <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 <div className="flex min-h-[170px] sm:min-h-[150px] flex-col items-center justify-center rounded-[30px] border border-white/60 bg-white/80 p-6 text-center backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-2">
                   <h3 className="text-3xl sm:text-4xl font-bold leading-tight text-[#1F5132]">
-                    100%
+                    Medium 
                   </h3>
                   <p className="mt-3 text-sm font-medium text-gray-500">
-                    Natural
+                    Grain
                   </p>
                 </div>
                 <div className="flex min-h-[170px] sm:min-h-[150px] flex-col items-center justify-center rounded-[30px] border border-white/60 bg-white/80 p-6 text-center backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-2">
                   <h3 className="text-3xl sm:text-4xl font-bold leading-tight text-[#1F5132]">
-                    Low GI
+                    Soft
                   </h3>
                   <p className="mt-3 text-sm font-medium text-gray-500">
-                    Healthy Choice
+                    Cooked Texture
                   </p>
                 </div>
                 <div className="flex min-h-[170px] sm:min-h-[150px] flex-col items-center justify-center rounded-[30px] border border-white/60 bg-white/80 p-6 text-center backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-2">
                   <h3 className="text-3xl sm:text-4xl font-bold leading-tight text-[#1F5132]">
-                    Premium
+                    Daily
                   </h3>
                   <p className="mt-3 text-sm font-medium text-gray-500">
-                    Quality
+                    Kitchen Use
                   </p>
                 </div>
               </div>
