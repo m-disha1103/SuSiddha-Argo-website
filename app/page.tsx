@@ -5,10 +5,10 @@ import Hero from "./components/Hero";
 
 const BrandPromise = dynamic(() => import("./components/BrandPromise"));
 const FarmToFamily = dynamic(() => import("./components/FarmToFamily"));
+const About = dynamic(() => import("./components/About"));
 const ProductSection = dynamic(() => import("./components/ProductSection"));
 const Benefits = dynamic(() => import("./components/Benefits"));
 const CinematicBanner = dynamic(() => import("./components/CinematicBanner"));
-const About = dynamic(() => import("./components/About"));
 const Testimonials = dynamic(() => import("./components/Testimonials"));
 const Quality = dynamic(() => import("./components/Quality"));
 const FAQ = dynamic(() => import("./components/FAQ"));
@@ -25,10 +25,19 @@ export default function Home() {
   return (
     <main className="relative overflow-x-hidden bg-gradient-to-b from-[#FFFDF7] via-[#F8F4E8] to-[#F3E6C4]">
       <Navbar />
-      {/* Hero should appear immediately */}
+
       <Hero />
+
       <ScrollFade>
-        <BrandPromise />
+        <About />
+      </ScrollFade>
+
+      <ScrollFade>
+        <ProductSection />
+      </ScrollFade>
+
+      <ScrollFade>
+        <Benefits />
       </ScrollFade>
 
       <ScrollFade>
@@ -36,19 +45,11 @@ export default function Home() {
       </ScrollFade>
 
       <ScrollFade>
-        <ProductSection />
-      </ScrollFade>
-      
-      <ScrollFade>
-        <Benefits />
+        <BrandPromise />
       </ScrollFade>
 
       <ScrollFade>
         <CinematicBanner />
-      </ScrollFade>
-
-      <ScrollFade>
-        <About />
       </ScrollFade>
 
       <ScrollFade>
